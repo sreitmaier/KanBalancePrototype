@@ -3,9 +3,13 @@ The prototype for the P3 Project KanBalance O.1
 
 Download or clone file.
 
-Change to a command line terminal and go to the directory of the file.
+Change to a command line terminal and go to the main directory of the file.
 
-Inside this, change to directory called server.
+Enter the command: 
+
+npm install
+
+After this, inside the directory change to directory called server.
 
 In the directory called server, start node by entering the command 
 
