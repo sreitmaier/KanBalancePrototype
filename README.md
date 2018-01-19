@@ -5,9 +5,9 @@ Download or clone file.
 
 Change to a command line terminal and go to the directory of the file.
 
-Inside this, change to directory called server
+Inside this, change to directory called server.
 
-In the directory called server start node bt entering the command 
+In the directory called server, start node by entering the command 
 
 node server.js
 
@@ -15,7 +15,7 @@ node server.js
 
 
 
-In your browser enter 
+In your browser enter:
 
 
 http://localhost:1337/#/
