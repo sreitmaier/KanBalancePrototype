@@ -3,7 +3,7 @@
         <h1>KanBalance</h1>
          <Menu></Menu> 
         <Tryit></Tryit> 
-        
+        <router-link to="/QR">Sync QRs</router-link>
         <h2>QR Codes</h2>
         <div v-for="(qr, index) in this.$store.state.qrCodes" :key="index">
             {{qr.QR}}
