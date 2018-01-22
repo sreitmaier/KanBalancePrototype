@@ -11,14 +11,15 @@
 
 export default {
   props: [],
+
   data(){
       return{
         decoded: null,
         oldDecoded: null
       }
   },
+
   mounted() {
-    console.log('Beispiel Component Geladen');
 
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas");
@@ -53,41 +54,36 @@ export default {
         var imageData = context.getImageData(0, 0, width, height);
         var decoded = jsQR.decodeQRFromImage(imageData.data, imageData.width, imageData.height);
         if(decoded) {
-          //alert(decoded);
-          // Hier ist die Magie, unser Ergebnis
+         
+          // Our QR Code
           console.log(decoded);
           saveQR(decoded);
         }
       }
     }
-
+//pass the qr code to this function, commit to store methods
     var saveQR = (decoded) => {
       console.log('Decoded vs Olddecoded', [decoded, this.oldDecoded]);
       if(decoded != this.oldDecoded){
 
         console.log('way to save');
         this.decoded = decoded;
-        // Speichern in den Store
+        // Commit to Store in index file, call mutations method updateQR
         this.$store.commit('updateQR', decoded);
 
 
-
-
-
-
-
-
-        // In SQL Datenbank speichern
-        // http://localhost:1337/newQR?value=qrstuff
+        // Save in SQL
+        // Reference Url http://localhost:1337/newQR?value=qrstuff in variable postinfo
+        
         var postInfo = {
             url: "http://localhost:1337/newQR?value="+decoded,
         }
         console.log('Send QR Data', postInfo.url);
-        // Schreibe die Daten
+        // Commit to Store in index file, call mutations method sendToAPI
         this.$store.commit('sendToAPI', postInfo);
 
 
-
+        //reset decoded
         this.oldDecoded = decoded;
 
       }
@@ -104,5 +100,6 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>

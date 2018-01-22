@@ -10,7 +10,7 @@
 </template>
 
 <script>
-// IMPORT COMPS
+
 
 export default {
   props: [],
@@ -19,17 +19,17 @@ export default {
         test: 'hallo',
       }
   },
-  //When element is loaded, do mounted
+  //Wenn das Kompenent geladen ist, nimm den Code in mounted
   mounted() {
 
     console.log('Beispiel Component Geladen');
 
-    // UPDATE INTERVALL (3000ms = 3sec)
+    // Frage die Datenbank in einem Intervall von drei Minuten nach neuen Codes ab 
     setInterval(() => { 
 
         console.log('Tick... Tack');
         
-        // Format das wir für QR brauchen:
+        // url Format das wir für den QR get request trigger brauchen:
         // http://localhost:1337/getQR
 
         var postInfo = {
