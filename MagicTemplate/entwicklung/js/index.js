@@ -5,6 +5,8 @@ import Home from './home.vue';
 // Import the qrServer Component from its directory
 import QRserver from './components/qrServer.vue';
 
+
+
 // Our Paths for the App
 const routes = [
     { path: '/', component: Home },

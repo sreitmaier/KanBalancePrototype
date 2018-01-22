@@ -62,7 +62,7 @@ app.post('/newUser', (req, res) => {
 // SAVE QR
 // http://localhost:1337/newQR?value=Hundi
 app.post('/newQR', (req, res) => {
-    console.log(req.query);
+    //console.log(req.query);
     
 
     // Erlaube nur Zugriffe von dieser URL

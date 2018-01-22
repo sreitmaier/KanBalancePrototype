@@ -1,5 +1,81 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 ;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: [],
+
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {
+        console.log('Menu Component Geladen');
+    },
+
+    components: {}
+
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('ul',[_c('li',[_vm._v("Item 1")]),_vm._v(" "),_c('li',[_vm._v("Item 2")]),_vm._v(" "),_c('li',[_vm._v("Item 3")]),_vm._v(" "),_c('li',[_vm._v("Item 4")]),_vm._v(" "),_c('li',[_vm._v("Item 5 we'll make a bit longer so\n     that it will wrap")])])])}]
+__vue__options__._scopeId = "data-v-69eb0b36"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-69eb0b36", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-69eb0b36", __vue__options__)
+  }
+})()}
+},{"vue":8,"vue-hot-reload-api":7}],2:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("p[data-v-5ce8c8df] {\n    font-family: verdana;\n    font-size: 20px;\n   color: rgb(255, 0, 85);\n\n}")
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: [],
+
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {
+        console.log('Tryit Component Geladen');
+    },
+
+    components: {}
+
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('p',[_vm._v("Hallo Welt, ich bin eine 2.Component")])])}]
+__vue__options__._scopeId = "data-v-5ce8c8df"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5ce8c8df", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-5ce8c8df", __vue__options__)
+  }
+})()}
+},{"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],3:[function(require,module,exports){
+;(function(){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7,6 +83,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   props: [],
+
   data: function data() {
     return {
       decoded: null,
@@ -15,8 +92,6 @@ exports.default = {
   },
   mounted: function mounted() {
     var _this = this;
-
-    console.log('Beispiel Component Geladen');
 
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas");
@@ -87,26 +162,40 @@ var __vue__options__ = (typeof module.exports === "function"? module.exports.opt
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("QRjs")]),_vm._v(" "),_c('video',{staticStyle:{"display":"none"},attrs:{"id":"video","autoplay":"true"}}),_vm._v(" "),_c('canvas',{staticStyle:{"width":"640px","height":"480px"},attrs:{"id":"canvas"}}),_vm._v(" "),_c('router-link',{attrs:{"to":"/"}},[_vm._v("Zurück zu Home")])],1)}
 __vue__options__.staticRenderFns = []
-__vue__options__._scopeId = "data-v-e83ddd58"
+__vue__options__._scopeId = "data-v-34493c7b"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-e83ddd58", __vue__options__)
+    hotAPI.createRecord("data-v-34493c7b", __vue__options__)
   } else {
-    hotAPI.reload("data-v-e83ddd58", __vue__options__)
+    hotAPI.reload("data-v-34493c7b", __vue__options__)
   }
 })()}
-},{"vue":6,"vue-hot-reload-api":5}],2:[function(require,module,exports){
+},{"vue":8,"vue-hot-reload-api":7}],4:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-67f48ff1] {\n    font-family: verdana;\n    font-size: 20px;\n   color: gray\n\n}")
 ;(function(){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _Tryit = require('./components/Tryit.vue');
+
+var _Tryit2 = _interopRequireDefault(_Tryit);
+
+var _Menu = require('./components/Menu.vue');
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
+
     props: [],
+
     data: function data() {
         return {
             test: 'hallo'
@@ -115,11 +204,7 @@ exports.default = {
     mounted: function mounted() {
         var _this = this;
 
-        console.log('Beispiel Component Geladen');
-
         setInterval(function () {
-
-            console.log('Tick... Tack');
 
             var postInfo = {
                 name: "QR",
@@ -129,27 +214,32 @@ exports.default = {
             _this.$store.commit('getFromAPI', postInfo);
         }, 3000);
     },
-    components: {},
+    components: {
+        Tryit: _Tryit2.default,
+        Menu: _Menu2.default
+
+    },
     methods: {}
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("KanBalance")]),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR)+"\n    ")])})],2)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("KanBalance")]),_vm._v(" "),_c('Menu'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR)+"\n    ")])})],2)}
 __vue__options__.staticRenderFns = []
-__vue__options__._scopeId = "data-v-3f22c438"
+__vue__options__._scopeId = "data-v-67f48ff1"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3f22c438", __vue__options__)
+    hotAPI.createRecord("data-v-67f48ff1", __vue__options__)
   } else {
-    hotAPI.reload("data-v-3f22c438", __vue__options__)
+    hotAPI.reload("data-v-67f48ff1", __vue__options__)
   }
 })()}
-},{"vue":6,"vue-hot-reload-api":5}],3:[function(require,module,exports){
+},{"./components/Menu.vue":1,"./components/Tryit.vue":2,"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],5:[function(require,module,exports){
 'use strict';
 
 var _home = require('./home.vue');
@@ -162,28 +252,43 @@ var _qrServer2 = _interopRequireDefault(_qrServer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Unsere Pfade
-// Vue Index
+// Our Paths for the App
+// Vue Index - the file for our Root Component called home
 
-// Import Start Component
+// Import the Root Component from its directory
 var routes = [{ path: '/', component: _home2.default }, { path: '/QR', component: _qrServer2.default }];
 
+/* Create a new Vue Router Instance Object for the routes constants
+we just defined. vue-Router.js also in the libs, will handle the rest)
+btw: Why no vue.use here ? */
+
+// Import the qrServer Component from its directory
 var router = new VueRouter({
     routes: routes // kurz für 'routes: routes'
 });
 
-// STORE
+/*
+Create our STORE (with the help of vueex.js ) its for the vue app state mangement
+In this case no need for exporting it, it's already in the file needed.
+*/
 Vue.use(Vuex);
 
 var store = new Vuex.Store({
+
+    // state: a predefined object, lets us put what is part of our STORE
 
     state: {
         count: 0,
         qrCodes: [],
         APIantwort: [],
-        messages: 'Message from Store'
+        messages: 'Message from Store',
+        notePos: []
     },
 
+    /* mutations: another predefined object in the store control the STORE, they can contain functions 
+     here for instance they manage the getting and sending to new APIs 
+     with XMLHTTPRequests, much like in the CC Task)
+    */
     mutations: {
 
         countUp: function countUp(state, query) {
@@ -245,7 +350,7 @@ var app = new Vue({
     store: store
 }).$mount('#app');
 
-},{"./components/qrServer.vue":1,"./home.vue":2}],4:[function(require,module,exports){
+},{"./components/qrServer.vue":3,"./home.vue":4}],6:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -431,7 +536,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -661,7 +766,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.5.13
@@ -8588,4 +8693,29 @@ Vue$3.nextTick(function () {
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":4}]},{},[3]);
+},{"_process":6}],9:[function(require,module,exports){
+var inserted = exports.cache = {}
+
+function noop () {}
+
+exports.insert = function (css) {
+  if (inserted[css]) return noop
+  inserted[css] = true
+
+  var elem = document.createElement('style')
+  elem.setAttribute('type', 'text/css')
+
+  if ('textContent' in elem) {
+    elem.textContent = css
+  } else {
+    elem.styleSheet.cssText = css
+  }
+
+  document.getElementsByTagName('head')[0].appendChild(elem)
+  return function () {
+    document.getElementsByTagName('head')[0].removeChild(elem)
+    inserted[css] = false
+  }
+}
+
+},{}]},{},[5]);
