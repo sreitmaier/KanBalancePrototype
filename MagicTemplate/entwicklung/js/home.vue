@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>KanBalance</h1>
+        <img src="/src/img/qr-code.png">
          <Menu></Menu> 
         <Tryit></Tryit> 
         <router-link to="/QR">Sync QRs</router-link>
