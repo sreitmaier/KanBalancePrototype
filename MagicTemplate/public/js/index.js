@@ -32,10 +32,10 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-24eea331", __vue__options__)
   } else {
-    hotAPI.reload("data-v-24eea331", __vue__options__)
+    hotAPI.rerender("data-v-24eea331", __vue__options__)
   }
 })()}
-},{"vue":8,"vue-hot-reload-api":7}],2:[function(require,module,exports){
+},{"vue":9,"vue-hot-reload-api":8}],2:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("p[data-v-02583044] {\n    font-family: verdana;\n    font-size: 20px;\n   color: rgb(255, 0, 85);\n\n}")
 ;(function(){
 'use strict';
@@ -71,10 +71,104 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-02583044", __vue__options__)
   } else {
-    hotAPI.reload("data-v-02583044", __vue__options__)
+    hotAPI.rerender("data-v-02583044", __vue__options__)
   }
 })()}
-},{"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],3:[function(require,module,exports){
+},{"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],3:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h2[data-v-5cbc2e69]{\n    color: #3be547;\n}")
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: [],
+    data: function data() {
+        return {
+            message: 'Hello World'
+        };
+    },
+    mounted: function mounted() {
+        console.log('Kanban Component Geladen');
+
+        var KanbanTest = new jKanban({
+            element: '#myKanban',
+            gutter: '0px',
+            widthBoard: '300px',
+            click: function click(el) {
+                console.log("Trigger on all items click!");
+            },
+            dropEl: function dropEl(el, target, source, sibling) {
+                console.log("Now its dropped and saved");
+
+                var currentBoards = KanbanTest.options.boards;
+                console.log('Boards', currentBoards);
+            },
+
+            boards: [{
+                "id": "_wish",
+                "title": "Wunschträume ",
+                "class": "wish",
+
+                "item": [{
+                    "id": "_test_delete",
+                    "title": "Try drag this",
+                    "drag": function drag(el, source) {
+                        console.log("START DRAG: " + el.dataset.eid);
+                    },
+                    "dragend": function dragend(el) {
+                        console.log("END DRAG: " + el.dataset.eid);
+                    },
+                    "drop": function drop(el) {
+                        console.log('DROPPED: ' + el.dataset.eid);
+                    }
+                }, {
+                    "title": "Try Click This!",
+                    "click": function click(el) {
+                        alert("click");
+                    }
+                }, {
+                    "title": "Run?"
+                }]
+            }, {
+                "id": "_working",
+                "title": "Working",
+                "class": "todo",
+                "item": [{
+                    "title": "Do Something!"
+                }, {
+                    "title": "Run?"
+                }]
+            }]
+        });
+    },
+    components: {},
+    methods: {
+        hallo: function hallo() {
+            console.log('Hallo Geklicked');
+        }
+    }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("Kanban")]),_vm._v(" "),_c('div',{attrs:{"id":"myKanban"}})])}]
+__vue__options__._scopeId = "data-v-5cbc2e69"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5cbc2e69", __vue__options__)
+  } else {
+    hotAPI.rerender("data-v-5cbc2e69", __vue__options__)
+  }
+})()}
+},{"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],4:[function(require,module,exports){
 ;(function(){
 "use strict";
 
@@ -170,11 +264,11 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-137a5ef6", __vue__options__)
   } else {
-    hotAPI.reload("data-v-137a5ef6", __vue__options__)
+    hotAPI.rerender("data-v-137a5ef6", __vue__options__)
   }
 })()}
-},{"vue":8,"vue-hot-reload-api":7}],4:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-163fb254] {\n    font-family: verdana;\n    font-size: 20px;\n   color: gray\n\n}")
+},{"vue":9,"vue-hot-reload-api":8}],5:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-163fb254] {\n    font-family: verdana;\n    font-size: 20px;\n   color: gray\n\n}\n\n        body[data-v-163fb254] {\n            font-family: 'Open Sans', sans-serif;;\n            margin: 0;\n            padding: 0;\n            font-size: 12px;\n            background:#E2E4E6;\n        }\n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n        }\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
 ;(function(){
 'use strict';
 
@@ -189,6 +283,10 @@ var _Tryit2 = _interopRequireDefault(_Tryit);
 var _Menu = require('./components/Menu.vue');
 
 var _Menu2 = _interopRequireDefault(_Menu);
+
+var _kanban = require('./components/kanban.vue');
+
+var _kanban2 = _interopRequireDefault(_kanban);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -216,7 +314,8 @@ exports.default = {
     },
     components: {
         Tryit: _Tryit2.default,
-        Menu: _Menu2.default
+        Menu: _Menu2.default,
+        Kanban: _kanban2.default
 
     },
     methods: {}
@@ -225,7 +324,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("KanBalance")]),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/qr-code.png"}}),_vm._v(" "),_c('Menu'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")]),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR)+"\n    ")])})],2)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("KanBalance")]),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/qr-code.png"}}),_vm._v(" "),_c('Menu'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")]),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR)+"\n    ")])}),_vm._v(" "),_c('Kanban')],2)}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-163fb254"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -236,10 +335,10 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-163fb254", __vue__options__)
   } else {
-    hotAPI.reload("data-v-163fb254", __vue__options__)
+    hotAPI.rerender("data-v-163fb254", __vue__options__)
   }
 })()}
-},{"./components/Menu.vue":1,"./components/Tryit.vue":2,"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],5:[function(require,module,exports){
+},{"./components/Menu.vue":1,"./components/Tryit.vue":2,"./components/kanban.vue":3,"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],6:[function(require,module,exports){
 'use strict';
 
 var _home = require('./home.vue');
@@ -350,7 +449,7 @@ var app = new Vue({
     store: store
 }).$mount('#app');
 
-},{"./components/qrServer.vue":3,"./home.vue":4}],6:[function(require,module,exports){
+},{"./components/qrServer.vue":4,"./home.vue":5}],7:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -536,7 +635,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -766,7 +865,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.5.13
@@ -8693,7 +8792,7 @@ Vue$3.nextTick(function () {
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":6}],9:[function(require,module,exports){
+},{"_process":7}],10:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -8718,4 +8817,4 @@ exports.insert = function (css) {
   }
 }
 
-},{}]},{},[5]);
+},{}]},{},[6]);

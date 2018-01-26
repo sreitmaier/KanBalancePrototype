@@ -2,7 +2,7 @@
     <div>
         <h1>KanBalance</h1>
         <img src="/src/img/qr-code.png">
-         <Menu></Menu> 
+        <Menu></Menu> 
         <Tryit></Tryit> 
         <router-link to="/QR">Sync QRs</router-link>
         <h2>QR Codes</h2>
@@ -10,12 +10,15 @@
             {{qr.QR}}
         </div>
 
+        <Kanban></Kanban> 
+
     </div>
 </template>
 
 <script>
 import Tryit from './components/Tryit.vue';
 import Menu from './components/Menu.vue';
+import Kanban from './components/kanban.vue';
 
 
 export default {
@@ -38,8 +41,6 @@ export default {
     // Frage die Datenbank in einem Intervall von drei Minuten nach neuen Codes ab 
     setInterval(() => { 
 
-        
-        
         // url Format das wir für den QR get request trigger brauchen:
         // http://localhost:1337/getQR
 
@@ -56,7 +57,8 @@ export default {
   }
   ,components: {
       Tryit,
-      Menu, 
+      Menu,
+      Kanban 
       
   },
   methods:{
@@ -72,5 +74,35 @@ h1 {
    color: gray
 
 }
+
+        body {
+            font-family: 'Open Sans', sans-serif;;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            background:#E2E4E6;
+        }
+
+        #myKanban {
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .wish {
+            background: #E2E4E6;
+        }
+
+        .todo {
+            background: #E2E4E6;
+        }
+
+        .working {
+            background: #E2E4E6;
+        }
+
+        .done{
+            background: #E2E4E6;
+        }
+
 
 </style>
