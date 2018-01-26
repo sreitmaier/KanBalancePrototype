@@ -23,7 +23,7 @@ if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('ul',[_c('li',[_vm._v("Item 1")]),_vm._v(" "),_c('li',[_vm._v("Item 2")]),_vm._v(" "),_c('li',[_vm._v("Item 3")]),_vm._v(" "),_c('li',[_vm._v("Item 4")]),_vm._v(" "),_c('li',[_vm._v("Item 5 we'll make a bit longer so\n     that it will wrap")])])])}]
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('ul',[_c('li',[_vm._v("Overview")]),_vm._v(" "),_c('li',[_vm._v("Kalender")]),_vm._v(" "),_c('li',[_vm._v("Item 3")]),_vm._v(" "),_c('li',[_vm._v("Item 4")]),_vm._v(" "),_c('li',[_vm._v("Item 5 we'll make a bit longer so\n     that it will wrap")])])])}]
 __vue__options__._scopeId = "data-v-24eea331"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -36,7 +36,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":9,"vue-hot-reload-api":8}],2:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("p[data-v-02583044] {\n    font-family: verdana;\n    font-size: 20px;\n   color: rgb(255, 0, 85);\n\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("p[data-v-02583044] {\n    font-family: verdana;\n    font-size: 10px;\n   color:black;\n\n}")
 ;(function(){
 'use strict';
 
@@ -61,7 +61,7 @@ if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('p',[_vm._v("Hallo Welt, ich bin eine 2.Component")])])}]
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('p',[_vm._v("Component tryit")])])}]
 __vue__options__._scopeId = "data-v-02583044"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -75,7 +75,6 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],3:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h2[data-v-5cbc2e69]{\n    color: #3be547;\n}")
 ;(function(){
 'use strict';
 
@@ -97,10 +96,9 @@ exports.default = {
 
         var stringKanban;
         var SendKanban = function SendKanban() {
-            console.log('sdfasdfgasdfasdfasdfgdfsgdsfgsdfgsfd');
             var currentBoards = _this.kanbanObject.options.boards;
             stringKanban = JSON.stringify(currentBoards);
-            console.log('dasdfasdasdasd', stringKanban);
+
             _this.sendKanbanToServer(stringKanban);
         };
 
@@ -110,11 +108,9 @@ exports.default = {
             element: '#myKanban',
             gutter: '0px',
             widthBoard: '300px',
-            click: function click(el) {
-                console.log("Trigger on all items click!");
-            },
+            click: function click(el) {},
             dropEl: function dropEl(el, target, source, sibling) {
-                console.log("Now its dropped and saved");
+                console.log("Now would be good moment to be dropped and saved");
 
                 SendKanban();
 
@@ -123,21 +119,15 @@ exports.default = {
 
             boards: [{
                 "id": "_wish",
-                "title": "Wunschträume ",
+                "title": "Zukunftsträume ",
                 "class": "wish",
 
                 "item": [{
                     "id": "_test_delete",
                     "title": "Try drag this",
-                    "drag": function drag(el, source) {
-                        console.log("START DRAG: " + el.dataset.eid);
-                    },
-                    "dragend": function dragend(el) {
-                        console.log("END DRAG: " + el.dataset.eid);
-                    },
-                    "drop": function drop(el) {
-                        console.log('DROPPED: ' + el.dataset.eid);
-                    }
+                    "drag": function drag(el, source) {},
+                    "dragend": function dragend(el) {},
+                    "drop": function drop(el) {}
                 }, {
                     "title": "Try Click This!",
                     "click": function click(el) {
@@ -148,7 +138,7 @@ exports.default = {
                 }]
             }, {
                 "id": "_working",
-                "title": "Working",
+                "title": "To Dos",
                 "class": "todo",
                 "item": [{
                     "title": "Do Something!"
@@ -192,21 +182,20 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("Kanban")]),_vm._v(" "),_c('div',{attrs:{"id":"myKanban"}}),_vm._v(" "),_c('div',{on:{"click":function($event){_vm.updateKanban()}}},[_vm._v("\n        Udpate Kanban\n    ")])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{attrs:{"id":"myKanban"}}),_vm._v(" "),_c('div',{on:{"click":function($event){_vm.updateKanban()}}},[_vm._v("\n        Udpate Kanban\n    ")])])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-5cbc2e69"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
-  module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-5cbc2e69", __vue__options__)
   } else {
     hotAPI.rerender("data-v-5cbc2e69", __vue__options__)
   }
 })()}
-},{"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],4:[function(require,module,exports){
+},{"vue":9,"vue-hot-reload-api":8}],4:[function(require,module,exports){
 ;(function(){
 "use strict";
 
@@ -306,7 +295,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":9,"vue-hot-reload-api":8}],5:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-163fb254] {\n    font-family: verdana;\n    font-size: 20px;\n   color: gray\n\n}\n\n        body[data-v-163fb254] {\n            font-family: 'Open Sans', sans-serif;;\n            margin: 0;\n            padding: 0;\n            font-size: 12px;\n            background:#E2E4E6;\n        }\n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n        }\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-163fb254] {\n    font-family: verdana;\n    font-size: 20px;\n   color: gray\n\n}\n\n        body[data-v-163fb254] {\n            \n            margin: 0;\n            padding: 0;\n            font-size: 12px;\n            background:#E2E4E6;\n        }\n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n        }\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
 ;(function(){
 'use strict';
 
@@ -362,7 +351,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("KanBalance")]),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/qr-code.png"}}),_vm._v(" "),_c('Menu'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")]),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR)+"\n    ")])}),_vm._v(" "),_c('Kanban')],2)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("KanBalance")]),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/LogoKB_NoBG.png"}}),_vm._v(" "),_c('Menu'),_vm._v(" "),_c('Kanban'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR))])}),_vm._v(" "),_c('div'),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")])],2)}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-163fb254"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")

@@ -1,16 +1,19 @@
 <template>
     <div>
         <h1>KanBalance</h1>
-        <img src="/src/img/qr-code.png">
+        <img src="/src/img/LogoKB_NoBG.png">
         <Menu></Menu> 
+         <Kanban></Kanban> 
+        
         <Tryit></Tryit> 
-        <router-link to="/QR">Sync QRs</router-link>
+        
         <h2>QR Codes</h2>
         <div v-for="(qr, index) in this.$store.state.qrCodes" :key="index">
-            {{qr.QR}}
-        </div>
+            {{qr.QR}}</div>
+            <div></div>
+         <router-link to="/QR">Sync QRs</router-link>
 
-        <Kanban></Kanban> 
+       
 
     </div>
 </template>
@@ -76,7 +79,7 @@ h1 {
 }
 
         body {
-            font-family: 'Open Sans', sans-serif;;
+            
             margin: 0;
             padding: 0;
             font-size: 12px;

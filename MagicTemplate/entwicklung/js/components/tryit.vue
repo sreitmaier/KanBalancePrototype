@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Hallo Welt, ich bin eine 2.Component</p>
+        <p>Component tryit</p>
         
     </div>
 </template>
@@ -32,8 +32,8 @@ export default {
 <style scoped>
 p {
     font-family: verdana;
-    font-size: 20px;
-   color: rgb(255, 0, 85);
+    font-size: 10px;
+   color:black;
 
 }
 

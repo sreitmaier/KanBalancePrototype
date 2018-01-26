@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Kanban</h1>
+        
         <div id="myKanban">
 
         </div>
@@ -25,10 +25,10 @@ export default {
 
     var stringKanban; 
     var SendKanban = () => {
-        console.log('sdfasdfgasdfasdfasdfgdfsgdsfgsdfgsfd');
+        //console.log('sdfasdfgasdfasdfasdfgdfsgdsfgsdfgsfd');
         var currentBoards = this.kanbanObject.options.boards;
         stringKanban = JSON.stringify(currentBoards);
-        console.log('dasdfasdasdasd', stringKanban)
+        //console.log('dasdfasdasdasd', stringKanban)
         this.sendKanbanToServer(stringKanban);
     }
 
@@ -39,10 +39,10 @@ export default {
         gutter: '0px',
         widthBoard: '300px',
         click: function (el) {
-            console.log("Trigger on all items click!");
+            //console.log("Trigger on all items click!");
         },
         dropEl: function (el, target, source, sibling) {
-            console.log("Now its dropped and saved"); 
+            console.log("Now would be good moment to be dropped and saved"); 
 
         // UPLOAD/SET currentBoards auf SQL Server
         SendKanban();
@@ -59,7 +59,7 @@ export default {
         boards: [
         {
         "id": "_wish",
-        "title": "Wunschträume ",
+        "title": "Zukunftsträume ",
         "class": "wish",
     
         "item": [
@@ -67,13 +67,13 @@ export default {
                 "id": "_test_delete",
                 "title": "Try drag this",
                 "drag": function (el, source) {
-                    console.log("START DRAG: " + el.dataset.eid);
+                    //console.log("START DRAG: " + el.dataset.eid);
                 },
                 "dragend": function (el) {
-                    console.log("END DRAG: " + el.dataset.eid);
+                    //console.log("END DRAG: " + el.dataset.eid);
                 },
                 "drop": function(el){
-                    console.log('DROPPED: ' + el.dataset.eid )
+                    //console.log('DROPPED: ' + el.dataset.eid )
                 }
             },
             {
@@ -92,7 +92,7 @@ export default {
 },
 {
     "id": "_working",
-    "title": "Working",
+    "title": "To Dos",
     "class": "todo",
     "item": [
         {
@@ -149,7 +149,5 @@ export default {
 </script>
 
 <style scoped>
-    h2{
-        color: #3be547;
-    }
+   
 </style>
