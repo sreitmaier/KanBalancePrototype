@@ -36,7 +36,7 @@ const store = new Vuex.Store({
         qrCodes: [],
         APIantwort: [],
         messages: 'Message from Store',
-        notePos:[]
+        Kanban: []
     },
 
     /* mutations: another predefined object in the store control the STORE, they can contain functions 
@@ -76,6 +76,14 @@ const store = new Vuex.Store({
                     if(postInfo.name === 'QR'){
                         state.qrCodes = res;
                         console.log(res);
+                    }
+
+                    if(postInfo.name === 'Kanban'){
+                        var lastKanban = res[res.length-1].data;
+                        console.log('LAST KANBAN', lastKanban);
+                        var newState = JSON.parse(lastKanban);
+                        state.Kanban = newState;
+                        console.log('KANBAN FROM SERVER!', newState);
                     }
                 }
             }

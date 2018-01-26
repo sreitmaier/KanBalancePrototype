@@ -86,13 +86,27 @@ exports.default = {
     props: [],
     data: function data() {
         return {
-            message: 'Hello World'
+            message: 'Hello World',
+            kanbanObject: {}
         };
     },
     mounted: function mounted() {
+        var _this = this;
+
         console.log('Kanban Component Geladen');
 
-        var KanbanTest = new jKanban({
+        var stringKanban;
+        var SendKanban = function SendKanban() {
+            console.log('sdfasdfgasdfasdfasdfgdfsgdsfgsdfgsfd');
+            var currentBoards = _this.kanbanObject.options.boards;
+            stringKanban = JSON.stringify(currentBoards);
+            console.log('dasdfasdasdasd', stringKanban);
+            _this.sendKanbanToServer(stringKanban);
+        };
+
+        this.getKanbanFromServer();
+
+        this.kanbanObject = new jKanban({
             element: '#myKanban',
             gutter: '0px',
             widthBoard: '300px',
@@ -102,8 +116,9 @@ exports.default = {
             dropEl: function dropEl(el, target, source, sibling) {
                 console.log("Now its dropped and saved");
 
-                var currentBoards = KanbanTest.options.boards;
-                console.log('Boards', currentBoards);
+                SendKanban();
+
+                console.log('!!!!!!!!!!! This Boards Inside', this.boards);
             },
 
             boards: [{
@@ -147,6 +162,29 @@ exports.default = {
     methods: {
         hallo: function hallo() {
             console.log('Hallo Geklicked');
+        },
+        sendKanbanToServer: function sendKanbanToServer(kanbanString) {
+
+            var postInfo = {
+                url: "http://localhost:1337/newKanban?value=" + kanbanString
+            };
+            console.log('Send Kanban Data', postInfo.url);
+
+            this.$store.commit('sendToAPI', postInfo);
+        },
+        getKanbanFromServer: function getKanbanFromServer() {
+
+            var postInfo = {
+                name: "Kanban",
+                url: "http://localhost:1337/getKanban"
+            };
+
+            this.$store.commit('getFromAPI', postInfo);
+        },
+        updateKanban: function updateKanban() {
+            console.log('UPDATE KANBAN', this.kanbanObject);
+            this.getKanbanFromServer();
+            this.kanbanObject.options.boards = this.$store.state.Kanban;
         }
     }
 };
@@ -154,8 +192,8 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("Kanban")]),_vm._v(" "),_c('div',{attrs:{"id":"myKanban"}})])}]
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("Kanban")]),_vm._v(" "),_c('div',{attrs:{"id":"myKanban"}}),_vm._v(" "),_c('div',{on:{"click":function($event){_vm.updateKanban()}}},[_vm._v("\n        Udpate Kanban\n    ")])])}
+__vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-5cbc2e69"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -381,7 +419,7 @@ var store = new Vuex.Store({
         qrCodes: [],
         APIantwort: [],
         messages: 'Message from Store',
-        notePos: []
+        Kanban: []
     },
 
     /* mutations: another predefined object in the store control the STORE, they can contain functions 
@@ -421,6 +459,14 @@ var store = new Vuex.Store({
                     if (postInfo.name === 'QR') {
                         state.qrCodes = res;
                         console.log(res);
+                    }
+
+                    if (postInfo.name === 'Kanban') {
+                        var lastKanban = res[res.length - 1].data;
+                        console.log('LAST KANBAN', lastKanban);
+                        var newState = JSON.parse(lastKanban);
+                        state.Kanban = newState;
+                        console.log('KANBAN FROM SERVER!', newState);
                     }
                 }
             };

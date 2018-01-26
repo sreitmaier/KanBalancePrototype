@@ -94,6 +94,42 @@ app.get('/getQR', (req, res) => {
     });
 });
 
+// SAVE KANBAN
+// http://localhost:1337/newKanban?value=Hundi
+app.post('/newKanban', (req, res) => {
+    //console.log(req.query);
+    
+
+    // Erlaube nur Zugriffe von dieser URL
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:1337');
+
+    db.run('INSERT INTO Kanban (data) VALUES (?)', [req.query.value], (err) => {
+        if (!err) {
+            //res.send(200,'QR Gespeichert');
+            console.log('Kanban gespeichert', req.query.value);
+            res.status(200).send('Kanban Gespeichert')
+          
+        } else {
+            res.send('Etwas ist schief gegangen', err);
+        }
+    });
+    
+});
+
+// GET KANBAN
+// http://localhost:1337/getKanban
+app.get('/getKanban', (req, res) => {
+    db.all('SELECT * FROM Kanban', (err, rows) => {
+        if (!err) {
+            console.log(rows)
+            //res.send(JSON.stringify(rows));
+            res.send(rows);
+        } else {
+            res.send('Etwas ist schief gegangen', err);
+        }
+    });
+});
+
 // Starte Webserver
 app.listen(1337, () => {
     console.log('http://localhost:1337');
