@@ -1,4 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("div[data-v-24eea331] {\n    background: lightgrey\n}")
 ;(function(){
 'use strict';
 
@@ -23,22 +24,22 @@ if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('ul',[_c('li',[_vm._v("Overview")]),_vm._v(" "),_c('li',[_vm._v("Kalender")]),_vm._v(" "),_c('li',[_vm._v("Item 3")]),_vm._v(" "),_c('li',[_vm._v("Item 4")]),_vm._v(" "),_c('li',[_vm._v("Item 5 we'll make a bit longer so\n     that it will wrap")])])])}]
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('img',{attrs:{"src":"/src/img/Log_small.png"}}),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/KB_small.png"}}),_vm._v(" "),_c('ul',[_c('li',[_vm._v("Übersicht")]),_vm._v(" "),_c('li',[_vm._v("Kalender")]),_vm._v(" "),_c('li',[_vm._v("Fortschritt")]),_vm._v(" "),_c('li',[_vm._v("Archiv")])])])}]
 __vue__options__._scopeId = "data-v-24eea331"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-24eea331", __vue__options__)
   } else {
     hotAPI.rerender("data-v-24eea331", __vue__options__)
   }
 })()}
-},{"vue":9,"vue-hot-reload-api":8}],2:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("p[data-v-02583044] {\n    font-family: verdana;\n    font-size: 10px;\n   color:black;\n\n}")
+},{"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],2:[function(require,module,exports){
 ;(function(){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -49,9 +50,7 @@ exports.default = {
     data: function data() {
         return {};
     },
-    mounted: function mounted() {
-        console.log('Tryit Component Geladen');
-    },
+    mounted: function mounted() {},
 
     components: {}
 
@@ -67,14 +66,13 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
-  module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-02583044", __vue__options__)
   } else {
     hotAPI.rerender("data-v-02583044", __vue__options__)
   }
 })()}
-},{"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],3:[function(require,module,exports){
+},{"vue":9,"vue-hot-reload-api":8}],3:[function(require,module,exports){
 ;(function(){
 'use strict';
 
@@ -107,24 +105,20 @@ exports.default = {
         this.kanbanObject = new jKanban({
             element: '#myKanban',
             gutter: '0px',
-            widthBoard: '300px',
+            widthBoard: '250px',
             click: function click(el) {},
             dropEl: function dropEl(el, target, source, sibling) {
-                console.log("Now would be good moment to be dropped and saved");
-
                 SendKanban();
-
-                console.log('!!!!!!!!!!! This Boards Inside', this.boards);
             },
 
             boards: [{
                 "id": "_wish",
-                "title": "Zukunftsträume ",
+                "title": "Ziele",
                 "class": "wish",
 
                 "item": [{
                     "id": "_test_delete",
-                    "title": "Try drag this",
+                    "title": "Urlaub planen",
                     "drag": function drag(el, source) {},
                     "dragend": function dragend(el) {},
                     "drop": function drop(el) {}
@@ -134,16 +128,40 @@ exports.default = {
                         alert("click");
                     }
                 }, {
-                    "title": "Run?"
+                    "title": "Achtsamkeitskurs"
                 }]
             }, {
                 "id": "_working",
                 "title": "To Dos",
                 "class": "todo",
                 "item": [{
-                    "title": "Do Something!"
+                    "title": "Impfpass finden"
                 }, {
-                    "title": "Run?"
+                    "title": "Flug buchen"
+                }, {
+                    "title": "Bestellung Buch abholen"
+                }]
+            }, {
+                "id": "_working",
+                "title": "Doing",
+                "class": "todo",
+                "item": [{
+                    "title": "Hotel buchen"
+                }]
+            }, {
+                "id": "_working",
+                "title": "Geschafft",
+                "class": "todo",
+                "item": [{
+                    "title": "Urlaubsantrag"
+                }, {
+                    "title": "Emma Metzler mit Michael"
+                }, {
+                    "title": "Eröffnung Jil Sander"
+                }, {
+                    "title": "Handyvertrag erneueren"
+                }, {
+                    "title": "Abo BahnCard kündigen"
                 }]
             }]
         });
@@ -158,7 +176,6 @@ exports.default = {
             var postInfo = {
                 url: "http://localhost:1337/newKanban?value=" + kanbanString
             };
-            console.log('Send Kanban Data', postInfo.url);
 
             this.$store.commit('sendToAPI', postInfo);
         },
@@ -172,7 +189,6 @@ exports.default = {
             this.$store.commit('getFromAPI', postInfo);
         },
         updateKanban: function updateKanban() {
-            console.log('UPDATE KANBAN', this.kanbanObject);
             this.getKanbanFromServer();
             this.kanbanObject.options.boards = this.$store.state.Kanban;
         }
@@ -192,7 +208,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-5cbc2e69", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-5cbc2e69", __vue__options__)
+    hotAPI.reload("data-v-5cbc2e69", __vue__options__)
   }
 })()}
 },{"vue":9,"vue-hot-reload-api":8}],4:[function(require,module,exports){
@@ -214,6 +230,7 @@ exports.default = {
   mounted: function mounted() {
     var _this = this;
 
+    console.log("QR Component geladen");
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
@@ -248,17 +265,13 @@ exports.default = {
         var imageData = context.getImageData(0, 0, width, height);
         var decoded = jsQR.decodeQRFromImage(imageData.data, imageData.width, imageData.height);
         if (decoded) {
-          console.log(decoded);
           saveQR(decoded);
         }
       }
     }
 
     var saveQR = function saveQR(decoded) {
-      console.log('Decoded vs Olddecoded', [decoded, _this.oldDecoded]);
       if (decoded != _this.oldDecoded) {
-
-        console.log('way to save');
         _this.decoded = decoded;
 
         _this.$store.commit('updateQR', decoded);
@@ -266,7 +279,6 @@ exports.default = {
         var postInfo = {
           url: "http://localhost:1337/newQR?value=" + decoded
         };
-        console.log('Send QR Data', postInfo.url);
 
         _this.$store.commit('sendToAPI', postInfo);
 
@@ -281,8 +293,8 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("QRjs")]),_vm._v(" "),_c('video',{staticStyle:{"display":"none"},attrs:{"id":"video","autoplay":"true"}}),_vm._v(" "),_c('canvas',{staticStyle:{"width":"640px","height":"480px"},attrs:{"id":"canvas"}}),_vm._v(" "),_c('router-link',{attrs:{"to":"/"}},[_vm._v("Zurück zu Home")])],1)}
-__vue__options__.staticRenderFns = []
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._m(0),_vm._v(" "),_c('video',{staticStyle:{"display":"none"},attrs:{"id":"video","autoplay":"true"}}),_vm._v(" "),_c('canvas',{staticStyle:{"width":"640px","height":"480px"},attrs:{"id":"canvas"}}),_vm._v(" "),_c('router-link',{attrs:{"to":"/"}},[_vm._v("Zurück zu Home")])],1)}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('img',{attrs:{"src":"/src/img/Log_small.png"}}),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/KB_small.png"}})])}]
 __vue__options__._scopeId = "data-v-137a5ef6"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -295,7 +307,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":9,"vue-hot-reload-api":8}],5:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-163fb254] {\n    font-family: verdana;\n    font-size: 20px;\n   color: gray\n\n}\n\n        body[data-v-163fb254] {\n            \n            margin: 0;\n            padding: 0;\n            font-size: 12px;\n            background:#E2E4E6;\n        }\n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n        }\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("div[data-v-163fb254] {\n    background: #E2E4E6\n}\nh1[data-v-163fb254] {\n    font-family: verdana;\n    font-size: 20px;\n   color: gray\n\n}\n  \n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n        }\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
 ;(function(){
 'use strict';
 
@@ -351,7 +363,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("KanBalance")]),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/LogoKB_NoBG.png"}}),_vm._v(" "),_c('Menu'),_vm._v(" "),_c('Kanban'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR))])}),_vm._v(" "),_c('div'),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")])],2)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('Menu'),_vm._v(" "),_c('Kanban'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR))])}),_vm._v(" "),_c('div'),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")])],2)}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-163fb254"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -419,7 +431,7 @@ var store = new Vuex.Store({
 
         countUp: function countUp(state, query) {
             state.count = state.count + query;
-            console.log('Count Up');
+            //console.log('Count Up');
         },
 
         updateQR: function updateQR(state, newQR) {
@@ -440,22 +452,22 @@ var store = new Vuex.Store({
             xhttp.send();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log(this.responseText);
+                    //console.log(this.responseText);
 
                     // Speichere Antwort unter res
                     res = JSON.parse(this.responseText);
 
                     if (postInfo.name === 'QR') {
                         state.qrCodes = res;
-                        console.log(res);
+                        //console.log(res);
                     }
 
                     if (postInfo.name === 'Kanban') {
                         var lastKanban = res[res.length - 1].data;
-                        console.log('LAST KANBAN', lastKanban);
+                        //console.log('LAST KANBAN', lastKanban);
                         var newState = JSON.parse(lastKanban);
                         state.Kanban = newState;
-                        console.log('KANBAN FROM SERVER!', newState);
+                        //console.log('KANBAN FROM SERVER!', newState);
                     }
                 }
             };
@@ -472,7 +484,8 @@ var store = new Vuex.Store({
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     // Unser Antwort this.responseText wenn gesendet
-                    console.log(this.responseText);
+                    //console.log(this.responseText);
+
                 }
             };
         }

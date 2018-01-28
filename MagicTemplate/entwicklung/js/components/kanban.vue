@@ -37,12 +37,12 @@ export default {
     this.kanbanObject = new jKanban({
         element: '#myKanban',
         gutter: '0px',
-        widthBoard: '300px',
+        widthBoard: '250px',
         click: function (el) {
             //console.log("Trigger on all items click!");
         },
         dropEl: function (el, target, source, sibling) {
-            console.log("Now would be good moment to be dropped and saved"); 
+            //console.log("Now would be good moment to be dropped and saved"); 
 
         // UPLOAD/SET currentBoards auf SQL Server
         SendKanban();
@@ -53,19 +53,19 @@ export default {
         // DOWNLOAD/GET current Boards
         // Update:
         // KanbanTest.options.boards = currentBoards
-        console.log('!!!!!!!!!!! This Boards Inside',this.boards)
+        //console.log('!!!!!!!!!!! This Boards Inside',this.boards)
         },
 
         boards: [
         {
         "id": "_wish",
-        "title": "Zukunftsträume ",
+        "title": "Ziele",
         "class": "wish",
     
         "item": [
             {
                 "id": "_test_delete",
-                "title": "Try drag this",
+                "title": "Urlaub planen",
                 "drag": function (el, source) {
                     //console.log("START DRAG: " + el.dataset.eid);
                 },
@@ -84,7 +84,7 @@ export default {
             },
 
             {
-                "title": "Run?",
+                "title": "Achtsamkeitskurs",
             },
 
 
@@ -96,14 +96,56 @@ export default {
     "class": "todo",
     "item": [
         {
-            "title": "Do Something!",
+            "title": "Impfpass finden",
         },
         {
-            "title": "Run?",
+            "title": "Flug buchen",
+        },
+         {
+            "title": "Bestellung Buch abholen",
         },
     
     ]
 },
+
+{
+    "id": "_working",
+    "title": "Doing",
+    "class": "todo",
+    "item": [
+        {
+            "title": "Hotel buchen",
+        },
+       
+    
+    ]
+},
+
+{
+    "id": "_working",
+    "title": "Geschafft",
+    "class": "todo",
+    "item": [
+        {
+            "title": "Urlaubsantrag",
+        },
+        {
+            "title": "Emma Metzler mit Michael",
+        },
+          {
+            "title": "Eröffnung Jil Sander",
+        },
+           {
+            "title": "Handyvertrag erneueren",
+        },
+             {
+            "title": "Abo BahnCard kündigen",
+        },
+    
+    
+    ]
+},
+
 ]
 });
 
@@ -123,7 +165,7 @@ export default {
         var postInfo = {
             url: "http://localhost:1337/newKanban?value="+kanbanString,
         }
-        console.log('Send Kanban Data', postInfo.url);
+        //console.log('Send Kanban Data', postInfo.url);
         // Commit to Store in index file, call mutations method sendToAPI
         this.$store.commit('sendToAPI', postInfo);
 
@@ -139,7 +181,7 @@ export default {
 
       },
       updateKanban(){
-          console.log('UPDATE KANBAN', this.kanbanObject);
+          //console.log('UPDATE KANBAN', this.kanbanObject);
           this.getKanbanFromServer();
           this.kanbanObject.options.boards = this.$store.state.Kanban;
       
@@ -149,5 +191,6 @@ export default {
 </script>
 
 <style scoped>
+
    
 </style>

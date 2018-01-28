@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>KanBalance</h1>
-        <img src="/src/img/LogoKB_NoBG.png">
+        
+        
         <Menu></Menu> 
          <Kanban></Kanban> 
         
@@ -71,20 +71,17 @@ export default {
 </script>
 
 <style scoped>
+
+div {
+    background: #E2E4E6
+}
 h1 {
     font-family: verdana;
     font-size: 20px;
    color: gray
 
 }
-
-        body {
-            
-            margin: 0;
-            padding: 0;
-            font-size: 12px;
-            background:#E2E4E6;
-        }
+  
 
         #myKanban {
             overflow-x: auto;

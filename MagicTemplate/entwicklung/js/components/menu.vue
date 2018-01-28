@@ -1,13 +1,13 @@
 <template>
     <div>
+        <img src="/src/img/Log_small.png">
+        <img src="/src/img/KB_small.png">
  <ul>
- <li>Overview</li>
+ <li>Übersicht</li>
  <li>Kalender</li>
- <li>Item 3</li>
- <li>Item 4</li>
- <li>Item 5 we'll make a bit longer so
-     that it will wrap</li>
-</ul>
+ <li>Fortschritt</li>
+ <li>Archiv</li>
+ </ul>
         
     </div>
 </template>
@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style scoped>
+div {
+    background: lightgrey
+}
+
 
 
 </style>

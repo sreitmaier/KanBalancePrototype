@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h1>QRjs</h1>
+      <div>
+        <img src="/src/img/Log_small.png">
+        <img src="/src/img/KB_small.png">
+        </div>
         <video id="video" autoplay="true" style="display:none;"></video>
         <canvas id="canvas" style="width:640px; height:480px;"></canvas>
         <router-link to="/">Zurück zu Home</router-link>
@@ -20,11 +23,11 @@ export default {
   },
 
   mounted() {
-
+    console.log("QR Component geladen")
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-
+   
     var width = parseInt(canvas.style.width);
     var height = parseInt(canvas.style.height);
     canvas.width = width;
@@ -56,17 +59,17 @@ export default {
         if(decoded) {
          
           // Our QR Code
-          console.log(decoded);
+          //console.log(decoded);
           saveQR(decoded);
         }
       }
     }
 //pass the qr code to this function, commit to store methods
     var saveQR = (decoded) => {
-      console.log('Decoded vs Olddecoded', [decoded, this.oldDecoded]);
+      //console.log('Decoded vs Olddecoded', [decoded, this.oldDecoded]);
       if(decoded != this.oldDecoded){
 
-        console.log('way to save');
+        //console.log('way to save');
         this.decoded = decoded;
         // Commit to Store in index file, call mutations method updateQR
         this.$store.commit('updateQR', decoded);
@@ -78,7 +81,7 @@ export default {
         var postInfo = {
             url: "http://localhost:1337/newQR?value="+decoded,
         }
-        console.log('Send QR Data', postInfo.url);
+        //console.log('Send QR Data', postInfo.url);
         // Commit to Store in index file, call mutations method sendToAPI
         this.$store.commit('sendToAPI', postInfo);
 

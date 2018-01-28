@@ -17,7 +17,7 @@ export default {
   },
 
   mounted() {
-      console.log('Tryit Component Geladen');
+      //console.log('Tryit Component Geladen');
       
   },
   components: {
@@ -30,11 +30,6 @@ export default {
 </script>
 
 <style scoped>
-p {
-    font-family: verdana;
-    font-size: 10px;
-   color:black;
 
-}
 
 </style>

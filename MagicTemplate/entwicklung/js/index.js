@@ -47,7 +47,7 @@ const store = new Vuex.Store({
 
         countUp: (state, query) => {
             state.count = state.count + query
-            console.log('Count Up');
+            //console.log('Count Up');
         },
 
         updateQR: (state, newQR) => {
@@ -68,22 +68,22 @@ const store = new Vuex.Store({
             xhttp.send();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log(this.responseText);
+                    //console.log(this.responseText);
                     
                     // Speichere Antwort unter res
                     res = JSON.parse(this.responseText);
                     
                     if(postInfo.name === 'QR'){
                         state.qrCodes = res;
-                        console.log(res);
+                        //console.log(res);
                     }
 
                     if(postInfo.name === 'Kanban'){
                         var lastKanban = res[res.length-1].data;
-                        console.log('LAST KANBAN', lastKanban);
+                        //console.log('LAST KANBAN', lastKanban);
                         var newState = JSON.parse(lastKanban);
                         state.Kanban = newState;
-                        console.log('KANBAN FROM SERVER!', newState);
+                        //console.log('KANBAN FROM SERVER!', newState);
                     }
                 }
             }
@@ -100,7 +100,7 @@ const store = new Vuex.Store({
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     // Unser Antwort this.responseText wenn gesendet
-                    console.log(this.responseText);
+                    //console.log(this.responseText);
 
                 }
             }

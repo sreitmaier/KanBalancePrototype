@@ -106,7 +106,7 @@ app.post('/newKanban', (req, res) => {
     db.run('INSERT INTO Kanban (data) VALUES (?)', [req.query.value], (err) => {
         if (!err) {
             //res.send(200,'QR Gespeichert');
-            console.log('Kanban gespeichert', req.query.value);
+            //console.log('Kanban gespeichert', req.query.value);
             res.status(200).send('Kanban Gespeichert')
           
         } else {
