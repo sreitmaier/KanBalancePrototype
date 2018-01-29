@@ -1,12 +1,12 @@
 <template>
-    <div>
-      <div>
-        <img src="/src/img/Log_small.png">
-        <img src="/src/img/KB_small.png">
+    <div class="QRserverInner">
+        <div class="close" @click="close()">x</div>
+        <div v-if="isFound" class="gefunden">
+            <h1>Gefunden!</h1>
+            <p>{{this.decoded}}</p>         
         </div>
         <video id="video" autoplay="true" style="display:none;"></video>
         <canvas id="canvas" style="width:640px; height:480px;"></canvas>
-        <router-link to="/">Zurück zu Home</router-link>
     </div>
 </template>
 
@@ -18,7 +18,8 @@ export default {
   data(){
       return{
         decoded: null,
-        oldDecoded: null
+        oldDecoded: null,
+        isFound: false
       }
   },
 
@@ -95,7 +96,7 @@ export default {
         })
         
         if(!isDuplicate){
-
+          this.isFound = true;
           // Commit to Store in index file, call mutations method updateQR
           this.$store.commit('updateQR', decoded);
 
@@ -122,12 +123,51 @@ export default {
 
   },
   methods:{
-
+    close(){
+      console.log('Close Clicked', this.$emit);
+      this.$emit('close');
+    }
   }
 }
 </script>
 
 <style scoped>
 
+.QRserverInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand-Regular';
+}
+
+.gefunden {
+    position: absolute;
+    color: #ffffff;
+}
+
+.gefunden h1 {
+    color: #419e51;
+    text-align: center;
+    font-size: 70px;
+}
+
+.gefunden p {
+    font-size: 50px;
+}
+
+.close{
+    background: #fff;
+    border-radius: 360px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    z-index: 999999;
+    margin-top: -240px;
+    margin-left: 320px;
+}
 
 </style>

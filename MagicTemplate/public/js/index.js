@@ -214,6 +214,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":8,"vue-hot-reload-api":7}],3:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".QRserverInner[data-v-137a5ef6] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-family: 'Quicksand-Regular';\n}\n\n.gefunden[data-v-137a5ef6] {\n    position: absolute;\n    color: #ffffff;\n}\n\n.gefunden h1[data-v-137a5ef6] {\n    color: #419e51;\n    text-align: center;\n    font-size: 70px;\n}\n\n.gefunden p[data-v-137a5ef6] {\n    font-size: 50px;\n}\n\n.close[data-v-137a5ef6]{\n    background: #fff;\n    border-radius: 360px;\n    position: absolute;\n    width: 50px;\n    height: 50px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 30px;\n    z-index: 999999;\n    margin-top: -240px;\n    margin-left: 320px;\n}")
 ;(function(){
 "use strict";
 
@@ -226,7 +227,8 @@ exports.default = {
   data: function data() {
     return {
       decoded: null,
-      oldDecoded: null
+      oldDecoded: null,
+      isFound: false
     };
   },
   mounted: function mounted() {
@@ -300,6 +302,8 @@ exports.default = {
         });
 
         if (!isDuplicate) {
+          _this.isFound = true;
+
           _this.$store.commit('updateQR', decoded);
 
           var postInfo = {
@@ -314,27 +318,33 @@ exports.default = {
     };
   },
   components: {},
-  methods: {}
+  methods: {
+    close: function close() {
+      console.log('Close Clicked', this.$emit);
+      this.$emit('close');
+    }
+  }
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._m(0),_vm._v(" "),_c('video',{staticStyle:{"display":"none"},attrs:{"id":"video","autoplay":"true"}}),_vm._v(" "),_c('canvas',{staticStyle:{"width":"640px","height":"480px"},attrs:{"id":"canvas"}}),_vm._v(" "),_c('router-link',{attrs:{"to":"/"}},[_vm._v("Zurück zu Home")])],1)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('img',{attrs:{"src":"/src/img/Log_small.png"}}),_vm._v(" "),_c('img',{attrs:{"src":"/src/img/KB_small.png"}})])}]
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"QRserverInner"},[_c('div',{staticClass:"close",on:{"click":function($event){_vm.close()}}},[_vm._v("x")]),_vm._v(" "),(_vm.isFound)?_c('div',{staticClass:"gefunden"},[_c('h1',[_vm._v("Gefunden!")]),_vm._v(" "),_c('p',[_vm._v(_vm._s(this.decoded))])]):_vm._e(),_vm._v(" "),_c('video',{staticStyle:{"display":"none"},attrs:{"id":"video","autoplay":"true"}}),_vm._v(" "),_c('canvas',{staticStyle:{"width":"640px","height":"480px"},attrs:{"id":"canvas"}})])}
+__vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-137a5ef6"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-137a5ef6", __vue__options__)
   } else {
-    hotAPI.reload("data-v-137a5ef6", __vue__options__)
+    hotAPI.rerender("data-v-137a5ef6", __vue__options__)
   }
 })()}
-},{"vue":8,"vue-hot-reload-api":7}],4:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("div[data-v-163fb254] {\n    background: #E2E4E6; \n    font-family: \"Quicksand-Regular\";\n}\n\n.container[data-v-163fb254] {\n            height: 100%;\n            width: 100%;\n            \n            display: flex;\n            flex-direction: row;\n}\n\n.sidebar[data-v-163fb254]{\n            \n            height: 100vh;\n            width: 300px;\n}\n\n.content[data-v-163fb254]{\n            \n            width: 100%;\n}\n\nh2[data-v-163fb254] {\n    font-family: \"Quicksand-Bold\";\n    font-size: 20px;\n   color: gray;\n\n}\n  \n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n           \n        }\n\n\n    \n\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n            \n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
+},{"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],4:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("/* div {\n    background: #E2E4E6; \n    font-family: \"Quicksand-Regular\";\n} */\n\n.container[data-v-163fb254] {\n            height: 100%;\n            width: 100%;\n            \n            display: flex;\n            flex-direction: row;\n}\n\n.sidebar[data-v-163fb254]{\n            \n            height: 100vh;\n            width: 300px;\n}\n\n.content[data-v-163fb254]{\n            \n            width: 100%;\n}\n\nh2[data-v-163fb254] {\n    font-family: \"Quicksand-Bold\";\n    font-size: 20px;\n   color: gray;\n\n}\n  \n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n           \n        }\n\n\n    \n\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n            \n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }\n\n\n.modalQR[data-v-163fb254] {\n    background: rgba(0, 0, 0, 0.8);\n    width: 100vw;\n    height: 100vh;\n    position: fixed;\n    z-index: 20000;\n    display: flex;\n    justify-content: center;\n    cursor: pointer;\n}")
 ;(function(){
 'use strict';
 
@@ -350,6 +360,10 @@ var _kanban = require('./components/kanban.vue');
 
 var _kanban2 = _interopRequireDefault(_kanban);
 
+var _qrServer = require('./components/qrServer.vue');
+
+var _qrServer2 = _interopRequireDefault(_qrServer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -358,7 +372,8 @@ exports.default = {
 
     data: function data() {
         return {
-            test: 'hallo'
+            test: 'hallo',
+            isVideoOpen: false
         };
     },
     mounted: function mounted() {
@@ -377,7 +392,8 @@ exports.default = {
     components: {
 
         Menu: _Menu2.default,
-        Kanban: _kanban2.default
+        Kanban: _kanban2.default,
+        QRServer: _qrServer2.default
 
     },
     methods: {}
@@ -386,7 +402,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_c('div',{staticClass:"sidebar"},[_c('Menu')],1),_vm._v(" "),_c('div',{staticClass:"content"},[_c('Kanban'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR)+"\n    ")])}),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")])],2),_vm._v(" "),_c('div')])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[(_vm.isVideoOpen)?_c('div',{staticClass:"modalQR"},[_c('QRServer',{on:{"close":function($event){_vm.isVideoOpen = false}}})],1):_vm._e(),_vm._v(" "),_c('div',{staticClass:"sidebar"},[_c('Menu')],1),_vm._v(" "),_c('div',{staticClass:"content"},[_c('Kanban'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR)+"\n    ")])}),_vm._v(" "),_c('div',{staticClass:"addButton",on:{"click":function($event){_vm.isVideoOpen = true}}},[_vm._v("Add QR")])],2),_vm._v(" "),_c('div')])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-163fb254"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -400,7 +416,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-163fb254", __vue__options__)
   }
 })()}
-},{"./components/Menu.vue":1,"./components/kanban.vue":2,"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],5:[function(require,module,exports){
+},{"./components/Menu.vue":1,"./components/kanban.vue":2,"./components/qrServer.vue":3,"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],5:[function(require,module,exports){
 'use strict';
 
 var _home = require('./home.vue');

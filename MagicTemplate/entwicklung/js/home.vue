@@ -1,5 +1,9 @@
 <template>
     <div class = "container">
+
+        <div v-if="isVideoOpen" class="modalQR">
+            <QRServer @close="isVideoOpen = false"></QRServer>
+        </div>
         
         <div class="sidebar">
             <Menu></Menu> 
@@ -7,13 +11,15 @@
 
         <div class="content">
             <Kanban></Kanban> 
-                   <h2>QR Codes</h2>
+        
+        
+        <h2>QR Codes</h2>
         <div v-for="(qr, index) in this.$store.state.qrCodes" :key="index">
             {{qr.QR}}
         </div>
             
             
-         <router-link to="/QR">Sync QRs</router-link>
+         <div class="addButton" @click="isVideoOpen = true">Add QR</div>
         </div>
         
        <div>
@@ -28,6 +34,7 @@
 
 import Menu from './components/Menu.vue';
 import Kanban from './components/kanban.vue';
+import QRServer from './components/qrServer.vue';
 
 
 export default {
@@ -40,6 +47,7 @@ export default {
   data(){
       return{
         test: 'hallo',
+        isVideoOpen: false
       }
   },
   //Wenn das Komponent geladen ist, nimm den Code in mounted
@@ -67,7 +75,8 @@ export default {
   ,components: {
       
       Menu,
-      Kanban 
+      Kanban,
+      QRServer
       
   },
   methods:{
@@ -78,10 +87,10 @@ export default {
 
 <style scoped>
 
-div {
+/* div {
     background: #E2E4E6; 
     font-family: "Quicksand-Regular";
-}
+} */
 
 .container {
             height: 100%;
@@ -137,5 +146,16 @@ h2 {
             background: #E2E4E6;
         }
 
+
+.modalQR {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
 
 </style>
