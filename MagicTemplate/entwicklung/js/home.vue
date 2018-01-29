@@ -1,25 +1,30 @@
 <template>
-    <div>
+    <div class = "container">
         
-        
-        <Menu></Menu> 
-         <Kanban></Kanban> 
-        
-        <Tryit></Tryit> 
-        
-        <h2>QR Codes</h2>
+        <div class="sidebar">
+            <Menu></Menu> 
+        </div>
+
+        <div class="content">
+            <Kanban></Kanban> 
+                   <h2>QR Codes</h2>
         <div v-for="(qr, index) in this.$store.state.qrCodes" :key="index">
             {{qr.QR}}</div>
-            <div></div>
+            
+            
          <router-link to="/QR">Sync QRs</router-link>
-
+        </div>
+        
+       <div>
+ 
+        </div>
        
 
     </div>
 </template>
 
 <script>
-import Tryit from './components/Tryit.vue';
+
 import Menu from './components/Menu.vue';
 import Kanban from './components/kanban.vue';
 
@@ -59,7 +64,7 @@ export default {
 
   }
   ,components: {
-      Tryit,
+      
       Menu,
       Kanban 
       
@@ -73,8 +78,29 @@ export default {
 <style scoped>
 
 div {
-    background: #E2E4E6
+    background: #E2E4E6; 
+    font-family: "Quicksand-Regular";
 }
+
+.container {
+            height: 100%;
+            width: 100%;
+            
+            display: flex;
+            flex-direction: row;
+}
+
+.sidebar{
+            
+            height: 100vh;
+            width: 300px;
+}
+
+.content{
+            
+            width: 100%;
+}
+
 h2 {
     font-family: "Quicksand-Bold";
     font-size: 20px;
@@ -86,10 +112,16 @@ h2 {
         #myKanban {
             overflow-x: auto;
             padding: 10px 0;
+           
         }
+
+
+    
+
 
         .wish {
             background: #E2E4E6;
+            
         }
 
         .todo {

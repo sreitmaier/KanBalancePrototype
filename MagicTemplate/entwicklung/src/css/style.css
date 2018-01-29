@@ -1,7 +1,3 @@
-body {
-    background: #E2E4E6;
-    margin: 0px;
-}
 
 @font-face { font-family: 'OpenSans-Regular';
     src: url('../fonts/OpenSans-Regular.ttf') format('truetype'); }
@@ -19,6 +15,14 @@ body {
 
 @font-face { font-family: 'Quicksand-Regular';
                     src: url('../fonts/Quicksand-Light.ttf') format('truetype'); }
+
+                    
+body {
+    background: #E2E4E6;
+    margin: 0px;
+   
+}
+
 
 
 

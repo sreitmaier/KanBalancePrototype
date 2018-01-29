@@ -45,7 +45,7 @@ export default {
 <style scoped>
 div {
 
-    background: lightgrey;
+    background: #E2E4E6;
 }
 
 a {

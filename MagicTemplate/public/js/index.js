@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("div[data-v-24eea331] {\n\n    background: lightgrey;\n}\n\na[data-v-24eea331] {\n    font-family: \"Quicksand-Regular\";\n}\n\n.logo[data-v-24eea331] {\n    padding-top: 30px;\n    padding-bottom: 30px;\n    padding-left: 30px;\n    background: rgb(78, 78, 78); \n    width: 200px; /* Set a width if you like */\n}\n\n.vertical-menu[data-v-24eea331] {\n    width: 230px; /* Set a width if you like */\n    height: 100vh;\n    background:rgb(78, 78, 78); \n    text-align: center;\n}\n\n.vertical-menu a[data-v-24eea331] {\n    background-color: #eee; /* Grey background color */\n    color: black; /* Black text color */\n    display: block; /* Make the links appear below each other */\n    padding: 12px; /* Add some padding */\n    text-decoration: none; /* Remove underline from links */\n}\n\n.vertical-menu a[data-v-24eea331]:hover {\n    background-color: #ccc; /* Dark grey background on mouse-over */\n}\n\n.vertical-menu a.active[data-v-24eea331] {\n    background-color: rgb(0, 0, 0); /* Add a green color to the \"active/current\" link */\n    color: white;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("div[data-v-24eea331] {\n\n    background: #E2E4E6;\n}\n\na[data-v-24eea331] {\n    font-family: \"Quicksand-Regular\";\n}\n\n.logo[data-v-24eea331] {\n    padding-top: 30px;\n    padding-bottom: 30px;\n    padding-left: 30px;\n    background: rgb(78, 78, 78); \n    width: 200px; /* Set a width if you like */\n}\n\n.vertical-menu[data-v-24eea331] {\n    width: 230px; /* Set a width if you like */\n    height: 100vh;\n    background:rgb(78, 78, 78); \n    text-align: center;\n}\n\n.vertical-menu a[data-v-24eea331] {\n    background-color: #eee; /* Grey background color */\n    color: black; /* Black text color */\n    display: block; /* Make the links appear below each other */\n    padding: 12px; /* Add some padding */\n    text-decoration: none; /* Remove underline from links */\n}\n\n.vertical-menu a[data-v-24eea331]:hover {\n    background-color: #ccc; /* Dark grey background on mouse-over */\n}\n\n.vertical-menu a.active[data-v-24eea331] {\n    background-color: rgb(0, 0, 0); /* Add a green color to the \"active/current\" link */\n    color: white;\n}")
 ;(function(){
 'use strict';
 
@@ -37,42 +37,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-24eea331", __vue__options__)
   }
 })()}
-},{"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],2:[function(require,module,exports){
-;(function(){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    props: [],
-
-    data: function data() {
-        return {};
-    },
-    mounted: function mounted() {},
-
-    components: {}
-
-};
-})()
-if (module.exports.__esModule) module.exports = module.exports.default
-var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('p',[_vm._v("Component tryit")])])}]
-__vue__options__._scopeId = "data-v-02583044"
-if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-02583044", __vue__options__)
-  } else {
-    hotAPI.rerender("data-v-02583044", __vue__options__)
-  }
-})()}
-},{"vue":9,"vue-hot-reload-api":8}],3:[function(require,module,exports){
+},{"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],2:[function(require,module,exports){
 ;(function(){
 'use strict';
 
@@ -211,7 +176,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-5cbc2e69", __vue__options__)
   }
 })()}
-},{"vue":9,"vue-hot-reload-api":8}],4:[function(require,module,exports){
+},{"vue":8,"vue-hot-reload-api":7}],3:[function(require,module,exports){
 ;(function(){
 "use strict";
 
@@ -306,18 +271,14 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-137a5ef6", __vue__options__)
   }
 })()}
-},{"vue":9,"vue-hot-reload-api":8}],5:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("div[data-v-163fb254] {\n    background: #E2E4E6\n}\nh2[data-v-163fb254] {\n    font-family: \"Quicksand-Bold\";\n    font-size: 20px;\n   color: gray;\n\n}\n  \n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n        }\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
+},{"vue":8,"vue-hot-reload-api":7}],4:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("div[data-v-163fb254] {\n    background: #E2E4E6; \n    font-family: \"Quicksand-Regular\";\n}\n\n.container[data-v-163fb254] {\n            height: 100%;\n            width: 100%;\n            \n            display: flex;\n            flex-direction: row;\n}\n\n.sidebar[data-v-163fb254]{\n            \n            height: 100vh;\n            width: 300px;\n}\n\n.content[data-v-163fb254]{\n            \n            width: 100%;\n}\n\nh2[data-v-163fb254] {\n    font-family: \"Quicksand-Bold\";\n    font-size: 20px;\n   color: gray;\n\n}\n  \n\n        #myKanban[data-v-163fb254] {\n            overflow-x: auto;\n            padding: 10px 0;\n           \n        }\n\n\n    \n\n\n        .wish[data-v-163fb254] {\n            background: #E2E4E6;\n            \n        }\n\n        .todo[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .working[data-v-163fb254] {\n            background: #E2E4E6;\n        }\n\n        .done[data-v-163fb254]{\n            background: #E2E4E6;\n        }")
 ;(function(){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _Tryit = require('./components/Tryit.vue');
-
-var _Tryit2 = _interopRequireDefault(_Tryit);
 
 var _Menu = require('./components/Menu.vue');
 
@@ -352,7 +313,7 @@ exports.default = {
         }, 3000);
     },
     components: {
-        Tryit: _Tryit2.default,
+
         Menu: _Menu2.default,
         Kanban: _kanban2.default
 
@@ -363,7 +324,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('Menu'),_vm._v(" "),_c('Kanban'),_vm._v(" "),_c('Tryit'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR))])}),_vm._v(" "),_c('div'),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")])],2)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_c('div',{staticClass:"sidebar"},[_c('Menu')],1),_vm._v(" "),_c('div',{staticClass:"content"},[_c('Kanban'),_vm._v(" "),_c('h2',[_vm._v("QR Codes")]),_vm._v(" "),_vm._l((this.$store.state.qrCodes),function(qr,index){return _c('div',{key:index},[_vm._v("\n        "+_vm._s(qr.QR))])}),_vm._v(" "),_c('router-link',{attrs:{"to":"/QR"}},[_vm._v("Sync QRs")])],2),_vm._v(" "),_c('div')])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-163fb254"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -377,7 +338,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-163fb254", __vue__options__)
   }
 })()}
-},{"./components/Menu.vue":1,"./components/Tryit.vue":2,"./components/kanban.vue":3,"vue":9,"vue-hot-reload-api":8,"vueify/lib/insert-css":10}],6:[function(require,module,exports){
+},{"./components/Menu.vue":1,"./components/kanban.vue":2,"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],5:[function(require,module,exports){
 'use strict';
 
 var _home = require('./home.vue');
@@ -497,7 +458,7 @@ var app = new Vue({
     store: store
 }).$mount('#app');
 
-},{"./components/qrServer.vue":4,"./home.vue":5}],7:[function(require,module,exports){
+},{"./components/qrServer.vue":3,"./home.vue":4}],6:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -683,7 +644,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -913,7 +874,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.5.13
@@ -8840,7 +8801,7 @@ Vue$3.nextTick(function () {
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":7}],10:[function(require,module,exports){
+},{"_process":6}],9:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -8865,4 +8826,4 @@ exports.insert = function (css) {
   }
 }
 
-},{}]},{},[6]);
+},{}]},{},[5]);

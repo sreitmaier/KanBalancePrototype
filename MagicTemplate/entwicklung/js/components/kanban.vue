@@ -2,7 +2,7 @@
     <div>
         
         <div id="myKanban">
-
+           
         </div>
         <div @click="updateKanban()">
             Udpate Kanban
@@ -191,6 +191,10 @@ export default {
 </script>
 
 <style scoped>
+
+
+
+
 
    
 </style>
