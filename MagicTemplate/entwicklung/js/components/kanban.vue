@@ -17,7 +17,8 @@ export default {
   data(){
       return{
           message: 'Hello World',
-          kanbanObject: {}
+          kanbanObject: {},
+          oldQRarray: []
       }
   },
   mounted() {
@@ -182,13 +183,72 @@ export default {
       },
       updateKanban(){
           //console.log('UPDATE KANBAN', this.kanbanObject);
-          this.getKanbanFromServer();
-          this.kanbanObject.options.boards = this.$store.state.Kanban;
+        
+        this.getKanbanFromServer();
+
+        console.log('diff1', this.oldQRarray);
+        console.log('diff2', this.$store.state.qrCodes);
+
+        var newQRs;
+
+        if(this.oldQRarray.length != 0){
+
+            // FILTER FUNKTION
+            // this.$store.state.qrCodes wird mit this.oldQRarray verglichen
+            newQRs = this.$store.state.qrCodes.filter((element) => {
+
+                var isNew = true;
+                
+                this.oldQRarray.forEach((oldElement) => {
+                    if(element.QR === oldElement.QR){
+                        isNew = false;
+                    }
+                    console.log('Filter', [element, oldElement, isNew])
+                })
+                
+                return isNew;
+
+            });
+
+            this.oldQRarray = this.$store.state.qrCodes;
+
+        } else {
+            newQRs = this.$store.state.qrCodes;
+            this.oldQRarray = this.$store.state.qrCodes;
+        }
+        
+        newQRs.forEach((element) => {
+
+            console.log('qr in for each', element.QR);
+
+            this.kanbanObject.addElement(
+                "_wish",
+                {
+                    "title": element.QR,
+                }
+            );
+
+        });
+
+        //this.kanbanObject.options.boards = this.$store.state.Kanban;
       
       }
   }
 }
+
+
+/* 
+KanbanTest.addElement(
+            "_todo",
+            {
+                "title": "Test Add",
+            }
+        );
+        */
 </script>
+
+
+
 
 <style scoped>
 

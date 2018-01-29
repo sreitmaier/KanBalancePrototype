@@ -23,6 +23,17 @@ export default {
   },
 
   mounted() {
+      /////// NUR FÜR TRENNUNG VON HOMR
+        var postInfo = {
+            name: "QR",
+            url: "http://localhost:1337/getQR",
+        }
+
+        this.$store.commit('getFromAPI', postInfo);
+        console.log('QR UPDATE STORE?', this.$store.state.qrCodes);
+        console.log('STORE?', this.$store.state);
+      /////////////
+
     console.log("QR Component geladen")
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas");
@@ -59,32 +70,46 @@ export default {
         if(decoded) {
          
           // Our QR Code
-          //console.log(decoded);
+          console.log(decoded);
           saveQR(decoded);
         }
       }
     }
 //pass the qr code to this function, commit to store methods
     var saveQR = (decoded) => {
+
       //console.log('Decoded vs Olddecoded', [decoded, this.oldDecoded]);
       if(decoded != this.oldDecoded){
 
-        //console.log('way to save');
+        console.log('way to save');
+
         this.decoded = decoded;
-        // Commit to Store in index file, call mutations method updateQR
-        this.$store.commit('updateQR', decoded);
+        var isDuplicate = false;
 
-
-        // Save in SQL
-        // Reference Url http://localhost:1337/newQR?value=qrstuff in variable postinfo
+        this.$store.state.qrCodes.forEach((element) => {
+            if(element.QR === decoded){
+                console.log('Vergleich Same', [element.QR, decoded])
+                isDuplicate = true;
+            }
+            console.log('Vergleich', [element, decoded])
+        })
         
-        var postInfo = {
-            url: "http://localhost:1337/newQR?value="+decoded,
-        }
-        //console.log('Send QR Data', postInfo.url);
-        // Commit to Store in index file, call mutations method sendToAPI
-        this.$store.commit('sendToAPI', postInfo);
+        if(!isDuplicate){
 
+          // Commit to Store in index file, call mutations method updateQR
+          this.$store.commit('updateQR', decoded);
+
+          // Save in SQL
+          // Reference Url http://localhost:1337/newQR?value=qrstuff in variable postinfo
+          
+          var postInfo = {
+              url: "http://localhost:1337/newQR?value="+decoded,
+          }
+          //console.log('Send QR Data', postInfo.url);
+          // Commit to Store in index file, call mutations method sendToAPI
+          this.$store.commit('sendToAPI', postInfo);
+          
+        }
 
         //reset decoded
         this.oldDecoded = decoded;

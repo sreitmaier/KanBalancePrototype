@@ -49,7 +49,8 @@ exports.default = {
     data: function data() {
         return {
             message: 'Hello World',
-            kanbanObject: {}
+            kanbanObject: {},
+            oldQRarray: []
         };
     },
     mounted: function mounted() {
@@ -154,8 +155,44 @@ exports.default = {
             this.$store.commit('getFromAPI', postInfo);
         },
         updateKanban: function updateKanban() {
+            var _this2 = this;
+
             this.getKanbanFromServer();
-            this.kanbanObject.options.boards = this.$store.state.Kanban;
+
+            console.log('diff1', this.oldQRarray);
+            console.log('diff2', this.$store.state.qrCodes);
+
+            var newQRs;
+
+            if (this.oldQRarray.length != 0) {
+                newQRs = this.$store.state.qrCodes.filter(function (element) {
+
+                    var isNew = true;
+
+                    _this2.oldQRarray.forEach(function (oldElement) {
+                        if (element.QR === oldElement.QR) {
+                            isNew = false;
+                        }
+                        console.log('Filter', [element, oldElement, isNew]);
+                    });
+
+                    return isNew;
+                });
+
+                this.oldQRarray = this.$store.state.qrCodes;
+            } else {
+                newQRs = this.$store.state.qrCodes;
+                this.oldQRarray = this.$store.state.qrCodes;
+            }
+
+            newQRs.forEach(function (element) {
+
+                console.log('qr in for each', element.QR);
+
+                _this2.kanbanObject.addElement("_wish", {
+                    "title": element.QR
+                });
+            });
         }
     }
 };
@@ -195,6 +232,16 @@ exports.default = {
   mounted: function mounted() {
     var _this = this;
 
+    var postInfo = {
+      name: "QR",
+      url: "http://localhost:1337/getQR"
+    };
+
+    this.$store.commit('getFromAPI', postInfo);
+    console.log('QR UPDATE STORE?', this.$store.state.qrCodes);
+    console.log('STORE?', this.$store.state);
+
+
     console.log("QR Component geladen");
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas");
@@ -230,6 +277,7 @@ exports.default = {
         var imageData = context.getImageData(0, 0, width, height);
         var decoded = jsQR.decodeQRFromImage(imageData.data, imageData.width, imageData.height);
         if (decoded) {
+          console.log(decoded);
           saveQR(decoded);
         }
       }
@@ -237,15 +285,29 @@ exports.default = {
 
     var saveQR = function saveQR(decoded) {
       if (decoded != _this.oldDecoded) {
+
+        console.log('way to save');
+
         _this.decoded = decoded;
+        var isDuplicate = false;
 
-        _this.$store.commit('updateQR', decoded);
+        _this.$store.state.qrCodes.forEach(function (element) {
+          if (element.QR === decoded) {
+            console.log('Vergleich Same', [element.QR, decoded]);
+            isDuplicate = true;
+          }
+          console.log('Vergleich', [element, decoded]);
+        });
 
-        var postInfo = {
-          url: "http://localhost:1337/newQR?value=" + decoded
-        };
+        if (!isDuplicate) {
+          _this.$store.commit('updateQR', decoded);
 
-        _this.$store.commit('sendToAPI', postInfo);
+          var postInfo = {
+            url: "http://localhost:1337/newQR?value=" + decoded
+          };
+
+          _this.$store.commit('sendToAPI', postInfo);
+        }
 
         _this.oldDecoded = decoded;
       }
@@ -268,7 +330,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-137a5ef6", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-137a5ef6", __vue__options__)
+    hotAPI.reload("data-v-137a5ef6", __vue__options__)
   }
 })()}
 },{"vue":8,"vue-hot-reload-api":7}],4:[function(require,module,exports){
