@@ -99,3 +99,7 @@
     opacity: 0.2 !important;
     transform: rotate(0deg) !important;
 }
+
+
+@font-face { font-family: 'OpenSans-Regular';
+    src: url('./style.css/OpenSans-Regular.ttf') format('truetype'); }

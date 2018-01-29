@@ -75,10 +75,10 @@ export default {
 div {
     background: #E2E4E6
 }
-h1 {
-    font-family: verdana;
+h2 {
+    font-family: "Quicksand-Bold";
     font-size: 20px;
-   color: gray
+   color: gray;
 
 }
   
