@@ -9,7 +9,8 @@
             <Kanban></Kanban> 
                    <h2>QR Codes</h2>
         <div v-for="(qr, index) in this.$store.state.qrCodes" :key="index">
-            {{qr.QR}}</div>
+            {{qr.QR}}
+        </div>
             
             
          <router-link to="/QR">Sync QRs</router-link>

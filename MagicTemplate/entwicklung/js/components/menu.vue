@@ -11,6 +11,10 @@
    <a href="#">Kalender</a>
   <a href="#">Fortschritt</a>
   <a href="#">Archiv</a>
+  <div class = "searchbar"><input type="text" placeholder="Search.."></div>
+
+
+  
 </div>
 
 
@@ -52,18 +56,30 @@ a {
     font-family: "Quicksand-Regular";
 }
 
+.searchbar input[type=text] {
+   
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 15px;
+    font-family: "Quicksand-Regular";
+    width: 100px; 
+}
+
+
 .logo {
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 30px;
     padding-left: 30px;
-    background: rgb(78, 78, 78); 
+    background:#eee;
     width: 200px; /* Set a width if you like */
 }
 
 .vertical-menu {
     width: 230px; /* Set a width if you like */
     height: 100vh;
-    background:rgb(78, 78, 78); 
+    background:#eee;
     text-align: center;
 }
 
@@ -77,11 +93,13 @@ a {
 
 .vertical-menu a:hover {
     background-color: #ccc; /* Dark grey background on mouse-over */
+    font-family: "Quicksand-Bold";
 }
 
 .vertical-menu a.active {
-    background-color: rgb(0, 0, 0); /* Add a green color to the "active/current" link */
-    color: white;
+    background-color: #f7ebbd; /* Add a green color to the "active/current" link */
+    color: black;
+    font-family: "Quicksand-Bold";
 }
 
 

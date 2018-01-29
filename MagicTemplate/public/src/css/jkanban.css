@@ -85,7 +85,9 @@
     padding: 15px;
     margin-bottom: 20px;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
 }
+
 
 .kanban-item:last-child {
     margin: 0;
@@ -124,3 +126,10 @@
         .kanban-item{
             font-family: "Quicksand-Regular";
         }
+
+        .kanban-board .kanban-drag {
+            min-height: 200px;
+            padding: 20px;
+            padding-top: 0;
+        }
+      
