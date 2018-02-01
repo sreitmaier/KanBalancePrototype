@@ -121,6 +121,7 @@
     transform: rotate(0deg) !important;
 }
 
+/* On Suggestion from Max Brandl, add your changes to lib css at end !!!*/
 /* Overwritings */
 
         .kanban-item{

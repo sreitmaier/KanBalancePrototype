@@ -24,17 +24,15 @@ export default {
   },
 
   mounted() {
-      /////// NUR FÜR TRENNUNG VON HOMR
+      // be sure to get sub route for QR codes in modal state 
         var postInfo = {
             name: "QR",
             url: "http://localhost:1337/getQR",
         }
 
         this.$store.commit('getFromAPI', postInfo);
-        console.log('QR UPDATE STORE?', this.$store.state.qrCodes);
-        console.log('STORE?', this.$store.state);
-      /////////////
-
+  
+    // jsQR Library Code Calls 
     console.log("QR Component geladen")
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas");
@@ -48,7 +46,7 @@ export default {
     if (navigator.getUserMedia){
       function successCallback(stream){
         if (window.webkitURL) {
-          video.src = window.webkitURL.createObjectURL(stream);
+          video.src = window.webkitURL.createObjectURL(stream);  // oder video.src auf leeren String setzen
         } else if (video.mozSrcObject !== undefined) {
           video.mozSrcObject = stream;
         } else {
@@ -61,7 +59,7 @@ export default {
     }
 
     function tick() {
-      requestAnimationFrame(tick);
+      requestAnimationFrame(tick); // counterpart to request finden::: cancelAnimationFrame 
       if (video.readyState === video.HAVE_ENOUGH_DATA){
         // Load the video onto the canvas
         context.drawImage(video, 0, 0, width, height);
@@ -70,16 +68,17 @@ export default {
         var decoded = jsQR.decodeQRFromImage(imageData.data, imageData.width, imageData.height);
         if(decoded) {
          
-          // Our QR Code
+          // Our QR Code variable 
           console.log(decoded);
           saveQR(decoded);
         }
       }
     }
-//pass the qr code to this function, commit to store methods
+    //pass the qr code to this saveQR, commit to store methods
     var saveQR = (decoded) => {
 
-      //console.log('Decoded vs Olddecoded', [decoded, this.oldDecoded]);
+      
+      //compare for already decoded on first try, check for dublicates in state qrcode array
       if(decoded != this.oldDecoded){
 
         console.log('way to save');
@@ -89,10 +88,10 @@ export default {
 
         this.$store.state.qrCodes.forEach((element) => {
             if(element.QR === decoded){
-                console.log('Vergleich Same', [element.QR, decoded])
+                console.log('Compare Same', [element.QR, decoded])
                 isDuplicate = true;
             }
-            console.log('Vergleich', [element, decoded])
+            console.log('Compare', [element, decoded])
         })
         
         if(!isDuplicate){
@@ -102,11 +101,10 @@ export default {
 
           // Save in SQL
           // Reference Url http://localhost:1337/newQR?value=qrstuff in variable postinfo
-          
-          var postInfo = {
-              url: "http://localhost:1337/newQR?value="+decoded,
+           var postInfo = {
+              url: "http://localhost:1337/newQR?value=" + decoded,
           }
-          //console.log('Send QR Data', postInfo.url);
+          
           // Commit to Store in index file, call mutations method sendToAPI
           this.$store.commit('sendToAPI', postInfo);
           
@@ -123,6 +121,7 @@ export default {
 
   },
   methods:{
+    // close the modal function, called it div 
     close(){
       console.log('Close Clicked', this.$emit);
       this.$emit('close');

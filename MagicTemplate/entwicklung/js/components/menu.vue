@@ -67,17 +67,21 @@ a {
     width: 100px; 
 }
 
+/* styling for logo div */
 
 .logo {
-    padding-top: 10px;
+    padding-top: 10px; /* Add padding top */
     padding-bottom: 30px;
     padding-left: 30px;
     background:#eee;
-    width: 200px; /* Set a width if you like */
+    width: 200px; /* Set a width  */
 }
 
+
+/* styling for menu div */
+
 .vertical-menu {
-    width: 230px; /* Set a width if you like */
+    width: 230px; /* Set a width */
     height: 100vh;
     background:#eee;
     text-align: center;
@@ -97,7 +101,7 @@ a {
 }
 
 .vertical-menu a.active {
-    background-color: #f7ebbd; /* Add a green color to the "active/current" link */
+    background-color: #f7ebbd; /* Add a yellow color to the "active/current" link */
     color: black;
     font-family: "Quicksand-Bold";
 }

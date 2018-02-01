@@ -16,9 +16,8 @@ export default {
   props: [],
   data(){
       return{
-          message: 'Hello World',
           kanbanObject: {},
-          oldQRarray: []
+          oldQRarray: [],
       }
   },
   mounted() {
@@ -34,7 +33,7 @@ export default {
     }
 
     this.getKanbanFromServer();
-
+// get strange scope of the jkanban instance in our component with help from Max Brandl 
     this.kanbanObject = new jKanban({
         element: '#myKanban',
         gutter: '0px',
@@ -47,14 +46,7 @@ export default {
 
         // UPLOAD/SET currentBoards auf SQL Server
         SendKanban();
-        // var test = [bla, bla, bla];
-        // var stringTest = test.toString()
-        // StringTest "[bla,bla,bla]"
-
-        // DOWNLOAD/GET current Boards
-        // Update:
-        // KanbanTest.options.boards = currentBoards
-        //console.log('!!!!!!!!!!! This Boards Inside',this.boards)
+     
         },
 
         boards: [
@@ -158,15 +150,13 @@ export default {
 
   },
   methods:{
-      hallo(){
-          console.log('Hallo Geklicked');
-      },
+  
       sendKanbanToServer(kanbanString){
         
         var postInfo = {
             url: "http://localhost:1337/newKanban?value="+kanbanString,
         }
-        //console.log('Send Kanban Data', postInfo.url);
+       
         // Commit to Store in index file, call mutations method sendToAPI
         this.$store.commit('sendToAPI', postInfo);
 
@@ -181,8 +171,8 @@ export default {
         this.$store.commit('getFromAPI', postInfo);
 
       },
+    // UPDATE FUNCTION 
       updateKanban(){
-          //console.log('UPDATE KANBAN', this.kanbanObject);
         
         this.getKanbanFromServer();
 
@@ -193,8 +183,8 @@ export default {
 
         if(this.oldQRarray.length != 0){
 
-            // FILTER FUNKTION
-            // this.$store.state.qrCodes wird mit this.oldQRarray verglichen
+            // FILTER FUNCTION  with help from Max Brandl 
+            // store array of qrCodes wird mit this.oldQRarray verglichen
             newQRs = this.$store.state.qrCodes.filter((element) => {
 
                 var isNew = true;
@@ -230,21 +220,14 @@ export default {
 
         });
 
-        //this.kanbanObject.options.boards = this.$store.state.Kanban;
+      
       
       }
   }
 }
 
 
-/* 
-KanbanTest.addElement(
-            "_todo",
-            {
-                "title": "Test Add",
-            }
-        );
-        */
+
 </script>
 
 
