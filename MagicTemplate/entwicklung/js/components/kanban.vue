@@ -90,11 +90,11 @@ export default {
 
 {
     "id": "_working",
-    "title": "Doing",
+    "title": "In Bearbeitung",
     "class": "todo",
     "item": [
         {
-            "title": "Hotel buchen",
+            "title": "Zeitplan machen",
         },
        
     
