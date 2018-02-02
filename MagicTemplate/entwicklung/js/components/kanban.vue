@@ -4,8 +4,8 @@
         <div id="myKanban">
            
         </div>
-        <div @click="updateKanban()">
-            Udpate Kanban
+        <div class = "updateButton" @click="updateKanban()">
+            Board aktualisieren
         </div>
     </div>
 </template>
@@ -212,7 +212,7 @@ export default {
             console.log('qr in for each', element.QR);
 
             this.kanbanObject.addElement(
-                "_wish",
+                "_working",
                 {
                     "title": element.QR,
                 }
@@ -234,7 +234,21 @@ export default {
 
 
 <style scoped>
+.updateButton {
 
+    background-color: #555555; /* Green */
+    border: none;
+    width: 140px;
+    height: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 
 
 

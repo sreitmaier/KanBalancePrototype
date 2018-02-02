@@ -11,7 +11,7 @@
    <a href="#">Kalender</a>
   <a href="#">Fortschritt</a>
   <a href="#">Archiv</a>
-  <div class = "searchbar"><input type="text" placeholder="Search.."></div>
+  <div class = "searchbar"><input type="text" placeholder="Suche nach..."></div>
 
 
   
@@ -49,7 +49,7 @@ export default {
 <style scoped>
 div {
 
-    background: #E2E4E6;
+    background:#eee;;
 }
 
 a {
@@ -64,7 +64,8 @@ a {
     margin-right: 16px;
     font-size: 15px;
     font-family: "Quicksand-Regular";
-    width: 100px; 
+    width: 238px; 
+    height: 30px;
 }
 
 /* styling for logo div */
@@ -81,8 +82,8 @@ a {
 /* styling for menu div */
 
 .vertical-menu {
-    width: 230px; /* Set a width */
-    height: 100vh;
+    width: 250px; /* Set a width */
+    height: 300vh;
     background:#eee;
     text-align: center;
 }

@@ -11,15 +11,14 @@
 
         <div class="content">
             <Kanban></Kanban> 
-        
-        
+        <!--
         <h2>QR Codes</h2>
         <div v-for="(qr, index) in this.$store.state.qrCodes" :key="index">
             {{qr.QR}}
         </div>
+        -->    
             
-            
-         <div class="addButton" @click="isVideoOpen = true">Add QR</div>
+         <div class="addButton" @click="isVideoOpen = true">QR scannen</div>
         </div>
         
        <div>
@@ -157,5 +156,19 @@ h2 {
     justify-content: center;
     cursor: pointer;
 }
+
+.addButton {
+    background-color: #cccccc;
+    width: 140px;
+    height: 20px;
+    border: none;
+    color:black ;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+    }
 
 </style>
