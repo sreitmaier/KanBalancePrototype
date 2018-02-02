@@ -145,13 +145,15 @@ export default {
 }
 
 .gefunden h1 {
-    color: #419e51;
+    
+    background-color: rgba(85, 223, 103, 0.5);
     text-align: center;
-    font-size: 70px;
+    font-size: 30px;
 }
 
 .gefunden p {
-    font-size: 50px;
+    font-size: 30px;
+    background-color: rgba(185, 185, 185, 0.5);
 }
 
 .close{

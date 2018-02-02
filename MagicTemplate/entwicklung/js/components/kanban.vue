@@ -59,22 +59,9 @@ export default {
             {
                 "id": "_test_delete",
                 "title": "Urlaub planen",
-                "drag": function (el, source) {
-                    //console.log("START DRAG: " + el.dataset.eid);
-                },
-                "dragend": function (el) {
-                    //console.log("END DRAG: " + el.dataset.eid);
-                },
-                "drop": function(el){
-                    //console.log('DROPPED: ' + el.dataset.eid )
-                }
+               
             },
-            {
-                "title": "Try Click This!",
-                "click": function (el) {
-                    alert("click");
-                },
-            },
+            
 
             {
                 "title": "Achtsamkeitskurs",
@@ -129,7 +116,7 @@ export default {
             "title": "Eröffnung Jil Sander",
         },
            {
-            "title": "Handyvertrag erneueren",
+            "title": "Handyvertrag erneuern",
         },
              {
             "title": "Abo BahnCard kündigen",

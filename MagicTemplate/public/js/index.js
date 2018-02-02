@@ -84,15 +84,8 @@ exports.default = {
 
                 "item": [{
                     "id": "_test_delete",
-                    "title": "Urlaub planen",
-                    "drag": function drag(el, source) {},
-                    "dragend": function dragend(el) {},
-                    "drop": function drop(el) {}
-                }, {
-                    "title": "Try Click This!",
-                    "click": function click(el) {
-                        alert("click");
-                    }
+                    "title": "Urlaub planen"
+
                 }, {
                     "title": "Achtsamkeitskurs"
                 }]
@@ -125,7 +118,7 @@ exports.default = {
                 }, {
                     "title": "Eröffnung Jil Sander"
                 }, {
-                    "title": "Handyvertrag erneueren"
+                    "title": "Handyvertrag erneuern"
                 }, {
                     "title": "Abo BahnCard kündigen"
                 }]
@@ -208,11 +201,11 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-5cbc2e69", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-5cbc2e69", __vue__options__)
+    hotAPI.reload("data-v-5cbc2e69", __vue__options__)
   }
 })()}
 },{"vue":8,"vue-hot-reload-api":7,"vueify/lib/insert-css":9}],3:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".QRserverInner[data-v-137a5ef6] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-family: 'Quicksand-Regular';\n}\n\n.gefunden[data-v-137a5ef6] {\n    position: absolute;\n    color: #ffffff;\n}\n\n.gefunden h1[data-v-137a5ef6] {\n    color: #419e51;\n    text-align: center;\n    font-size: 70px;\n}\n\n.gefunden p[data-v-137a5ef6] {\n    font-size: 50px;\n}\n\n.close[data-v-137a5ef6]{\n    background: #fff;\n    border-radius: 360px;\n    position: absolute;\n    width: 50px;\n    height: 50px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 30px;\n    z-index: 999999;\n    margin-top: -240px;\n    margin-left: 320px;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".QRserverInner[data-v-137a5ef6] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-family: 'Quicksand-Regular';\n}\n\n.gefunden[data-v-137a5ef6] {\n    position: absolute;\n    color: #ffffff;\n}\n\n.gefunden h1[data-v-137a5ef6] {\n    \n    background-color: rgba(85, 223, 103, 0.5);\n    text-align: center;\n    font-size: 30px;\n}\n\n.gefunden p[data-v-137a5ef6] {\n    font-size: 30px;\n    background-color: rgba(185, 185, 185, 0.5);\n}\n\n.close[data-v-137a5ef6]{\n    background: #fff;\n    border-radius: 360px;\n    position: absolute;\n    width: 50px;\n    height: 50px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 30px;\n    z-index: 999999;\n    margin-top: -240px;\n    margin-left: 320px;\n}")
 ;(function(){
 "use strict";
 
