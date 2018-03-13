@@ -12,9 +12,9 @@ app.use('/', express.static('../public'));
 
 // set sub route 
 app.get('/QR', (req, res) => {
-   //console.log(__dirname);
+    //console.log(__dirname);
     res.sendFile(path.join(__dirname + '/QR-Code-Server/index.html'));
-    
+
 });
 
 
@@ -29,12 +29,12 @@ app.post('/newQR', (req, res) => {
         if (!err) {
             //res.send(200,'QR Gespeichert');
             res.status(200).send('QR Gespeichert')
-          
+
         } else {
             res.send('Etwas ist schief gegangen', err);
         }
     });
-    
+
 });
 
 // GET QR FROM DB 
@@ -42,7 +42,7 @@ app.post('/newQR', (req, res) => {
 app.get('/getQR', (req, res) => {
     db.all('SELECT * FROM QRcodes', (err, rows) => {
         if (!err) {
-            console.log(rows)
+
             res.send(rows);
         } else {
             res.send('Etwas ist schief gegangen', err);
@@ -50,37 +50,6 @@ app.get('/getQR', (req, res) => {
     });
 });
 
-// SAVE KANBAN  
-// http://localhost:1337/newKanban?value=Hundi
-app.post('/newKanban', (req, res) => {
-    //console.log(req.query);
-    
-
-    // Erlaube nur Zugriffe von dieser URL
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:1337');
-
-    db.run('INSERT INTO Kanban (data) VALUES (?)', [req.query.value], (err) => {
-        if (!err) {
-            res.status(200).send('Kanban Gespeichert')  
-        } else {
-            res.send('Etwas ist schief gegangen', err);
-        }
-    });
-    
-});
-
-// GET KANBAN 
-// http://localhost:1337/getKanban
-app.get('/getKanban', (req, res) => {
-    db.all('SELECT * FROM Kanban', (err, rows) => {
-        if (!err) {
-            console.log(rows)
-            res.send(rows);
-        } else {
-            res.send('Etwas ist schief gegangen', err);
-        }
-    });
-});
 
 
 

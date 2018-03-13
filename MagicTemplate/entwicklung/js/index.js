@@ -32,11 +32,7 @@ const store = new Vuex.Store({
     // state: a predefined object, lets us put what is part of our STORE
     
     state: {
-        count: 0,
-        qrCodes: [],
-        APIantwort: [],
-        messages: 'Message from Store',
-        Kanban: []
+       qrCodes: [],
     },
 
     /* mutations: another predefined object in the store control the STORE, they can contain functions 
@@ -45,20 +41,17 @@ const store = new Vuex.Store({
     */
     mutations: {
 
-        countUp: (state, query) => {
-            state.count = state.count + query
-            //console.log('Count Up');
-        },
+     
 
         updateQR: (state, newQR) => {
-            console.log('in mutation save');
+            
             state.qrCodes.push(newQR);
         },
 
         getFromAPI: (state, postInfo) => {
             // Beispiel für eine URL
             // url = 'http://localhost:3000/search?query='+this.$store.state.searchInput;
-            console.log('url BEFORE API Call',postInfo.url);
+          
             // Antwort     
             var res;
 
@@ -78,19 +71,12 @@ const store = new Vuex.Store({
                         //console.log(res);
                     }
 
-                    if(postInfo.name === 'Kanban'){
-                        var lastKanban = res[res.length-1].data;
-                        //console.log('LAST KANBAN', lastKanban);
-                        var newState = JSON.parse(lastKanban);
-                        state.Kanban = newState;
-                        //console.log('KANBAN FROM SERVER!', newState);
-                    }
                 }
             }
         },
         
         sendToAPI: (state, postInfo) => {
-            console.log('url BEFORE API Call',postInfo.url);
+            
 
             // CALL TO SERVER
             var xhttp = new XMLHttpRequest();                
