@@ -1,20 +1,21 @@
 # KanBalancePrototype
-The prototype for the P3 Project KanBalance O.1
+This is some rapid prototyping for the P3 Project KanBalance O.1 at Hochschule Darmstadt.
 
 Download or clone file.
 
-change to a command line terminal and go to the main directory of the file.
+Change to a command line terminal and go to the main directory of the file.
 
-enter and return 
+Enter the following command and hit the return key: 
 
 npm install
 
+---
 
 To run locally:
 
-change to directory server
+In the command line terminal, change to the directory called server
 
-in the directory called server, start node by entering the command 
+In the directory, start node by entering the command 
 
 node server.js
 
